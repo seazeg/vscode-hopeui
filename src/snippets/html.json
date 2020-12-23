@@ -1,0 +1,188 @@
+{
+    "hopeUI.input.文本框": {
+        "prefix": "hope.input",
+        "body": [
+            "<input name='text' type='text' placeholder='请输入文本' class='hopeui-input' hope-verify='required' />"
+        ],
+        "description": "hopeUI文本框组件"
+    },
+    "hopeUI.suggest.联想文本框": {
+        "prefix": "hope.suggest",
+        "body": [
+            "<input name='text' type='text' placeholder='请输入文本' class='hopeui-input' hope-verify='required' autoprompt/>"
+        ],
+        "description": "hopeUI联想文本框组件"
+    },
+    "hopeUI.textarea.多行文本框": {
+        "prefix": "hope.textarea",
+        "body": [
+            "<textarea name='textarea' class='hopeui-textarea' placeholder='请输入内容' hope-verify='required' maxlength='100'></textarea>"
+        ],
+        "description": "hopeUI多行文本框组件"
+    },
+    "hopeUI.carousel.轮播": {
+        "prefix": "hope.carousel",
+        "body": [
+            "<div class='hope-container'>",
+            "    <div class='hope-wrapper'>",
+            "        <div class='hope-slide'>",
+            "            ${1:<div class='title'>内容</div>}",
+            "        </div>",
+            "        <div class='hope-slide'>",
+            "            ${2:<div class='title'>内容</div>}",
+            "        </div>",
+            "        <div class='hope-slide'>",
+            "            ${3:<div class='title'>内容</div>}",
+            "        </div>",
+            "    </div>",
+            "    <div class='hope-pagination'></div>",
+            "</div>"
+        ],
+        "description": "hopeUI轮播组件"
+    },
+    "hopeUI.checkbox.复选框": {
+        "prefix": "hope.checkbox",
+        "body": [
+            "<input type='checkbox' name='checkbox' value='${1:选项}' hope-verify='required' class='js_checkbox'/>",
+            "<input type='checkbox' name='checkbox' value='${2:选项}' hope-verify='required' class='js_checkbox'/>",
+            "<input type='checkbox' name='checkbox' value='${3:选项}' hope-verify='required' class='js_checkbox'/>"
+        ],
+        "description": "hopeUI复选框组件"
+    },
+    "hopeUI.radio.单选框": {
+        "prefix": "hope.radio",
+        "body": [
+            "<input type='radio' name='radio' value='${1:选项}' hope-verify='required' class='js_radio'/>",
+            "<input type='radio' name='radio' value='${2:选项}' hope-verify='required' class='js_radio'/>",
+            "<input type='radio' name='radio' value='${3:选项}' hope-verify='required' class='js_radio'/>"
+        ],
+        "description": "hopeUI单选框组件"
+    },
+    "hopeUI.radio.日期时间选择器": {
+        "prefix": "hope.datepicker",
+        "body": [
+            "<input name='text' type='text' id='hope-datepicker' class='hopeui-input placeholder='请选择日期' readonly/>"
+        ],
+        "description": "hopeUI日期时间选择器组件"
+    },
+    "hopeUI.form.表单": {
+        "prefix": "hope.form",
+        "body": [
+            "<form class='hopeui-form' name='form' action='' id='form'>",
+            "    <div class='hopeui-form-item'>",
+            "        <label class='hopeui-form-label'>${1:显示名称}</label>",
+            "        <div class='hopeui-input-block'>",
+            "            ${2://表单组件}",
+            "        </div>",
+            "    </div>",
+            "</form>"
+        ],
+        "description": "hopeUI表单组件"
+    },
+    "hopeUI.numup.数字自增效果": {
+        "prefix": "hope.numup",
+        "body": [
+            "<span class='hope-numup' hope-numup-num='52000' hope-numup-time='200' hope-numup-speed='50'>0</span>"   
+        ],
+        "description": "hopeUI数字自增效果组件"
+    },
+    "hopeUI.picture.图片响应式加载": {
+        "prefix": "hope.picture",
+        "body": [
+            "<img class='hope-picture' src='${1:loading.gif}'",
+            "hope-xl-src='${2}'",
+            "hope-lg-src='${3}'",
+            "hope-md-src='${4}'",
+            "hope-sm-src='${5}'",
+            "hope-xs-src='${6}'",
+            "class='${7:hopeui-effect-scale|hopeui-effect-shadow}'",
+            "alt='${7}'>"   
+        ],
+        "description": "hopeUI图片响应式加载组件"
+    },
+    "hopeUI.omit.文字响应式截断": {
+        "prefix": "hope.omit",
+        "body": [
+            "<p class='hope-omit' hope-omit-xl='${1}' hope-omit-md='${2}' hope-omit-xs='${3}'>",
+            "     ${4}",
+            "</p>"           
+        ],
+        "description": "hopeUI文字响应式截断组件"
+    },
+    "hopeUI.tab.选项卡": {
+        "prefix": "hope.tab",
+        "body": [
+            "<div class='hopeui-tab ${1:hopeui-tab-simple|hopeui-tab-card}'>",
+            "    <div class='hopeui-tab-title'>",
+            "        <ul>",
+            "            <li class='hopeui-tab-this'>${2:选项标题}</li>",
+            "            <li>${3:选项标题}</li>",
+            "            <li>${4:选项标题}</li>",
+            "        </ul>",
+            "    </div>",
+            "    <div class='hopeui-tab-content'>",
+            "        <div class='hopeui-tab-inner'>",
+            "            <div class='hopeui-tab-item'>${5:选项内容}</div>",
+            "            <div class='hopeui-tab-item'>${6:选项内容}</div>",
+            "            <div class='hopeui-tab-item'>${7:选项内容}</div>",
+            "        </div>",
+            "    </div>",
+            "</div>"
+        ],
+        "description": "hopeUI选项卡组件"
+    },
+    "hopeUI.zoom.图像放大镜": {
+        "prefix": "hope.zoom",
+        "body": [
+            "<div class='hopeui-zoom-thumb-wrapper'>",
+            "<img id='hopeui-zoom' src='${1:缩略图}'",
+            "    hope-large-img-url='${2:原始大图}'",
+            "    hope-large-img-wrapper='${3:预览容器ID}'>",
+            "</div>",
+            "<div class='hopeui-zoom-preview' id='${4:预览容器ID}'>预览容器</div>"       
+        ],
+        "description": "hopeUI图像放大镜组件"
+    },
+    "hopeUI.grid.栅格": {
+        "prefix": "hope.grid",
+        "body": [
+            "<div class='hopeui-row'>",
+            "\t${1}",
+            "<div>"           
+        ],
+        "description": "hopeUI按钮组件"
+    },
+    "hopeUI.button.按钮": {
+        "prefix": "hope.button",
+        "body": [
+            "<button type='button' class='hopeui-btn ${1:hopeui-btn-primary|hopeui-btn-disabled} ${2:hopeui-btn-radius}'>${3:按钮名称}</button>"           
+        ],
+        "description": "hopeUI按钮组件"
+    },
+    "hopeUI.button.图标按钮": {
+        "prefix": "hope.button.icon",
+        "body": [
+            "<button type='button' class='hopeui-btn ${1:hopeui-btn-primary|hopeui-btn-disabled} ${2:hopeui-btn-radius}'>",
+                  "<i class='${3:hopeui-icon hopeui-icon-theme}'></i>${4:按钮名称}",
+            "</button>"         
+        ],
+        "description": "hopeUI按钮组件"
+    },
+    "hopeUI.button.按钮组": {
+        "prefix": "hope.button.group",
+        "body": [
+            "<div class='hopeui-btn-group'>",
+            "    <button type='button' class='hopeui-btn'>",
+            "        <i class='${1:hopeui-icon hopeui-icon-theme}'></i>${2:按钮名称}",
+            "    </button>",
+            "    <button type=/button class='hopeui-btn'>",
+            "        <i class='${3:hopeui-icon hopeui-icon-theme}'></i>${4:按钮名称}",
+            "    </button>",
+            "    <button type='button' class='hopeui-btn'>",
+            "        <i class='${5:hopeui-icon hopeui-icon-theme}'></i>${6:按钮名称}",
+            "    </button>",
+            "</div>"
+        ],
+        "description": "hopeUI按钮组件"
+    }
+}
