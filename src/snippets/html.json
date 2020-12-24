@@ -1,4 +1,16 @@
 {
+    "hopeUI.selector.下拉框": {
+        "prefix": "hope.selector",
+        "body": [
+            "<select name='${1:select}' class='${2:select}' hope-verify='required'>",
+            "    <option value=''>${3:请选择一个选项}</option>",
+            "    <option value='${4:选项值}'>${5:显示名称}</option>",
+            "    <option value='${6:选项值}'>${7:显示名称}</option>",
+            "    <option value='${8:选项值}'>${9:显示名称}</option>",
+            "</select>"
+        ],
+        "description": "hopeUI下拉框组件"
+    },
     "hopeUI.input.文本框": {
         "prefix": "hope.input",
         "body": [

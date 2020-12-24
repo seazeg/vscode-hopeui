@@ -1,4 +1,22 @@
 {
+    "hopeUI.selector.下拉框": {
+        "prefix": "hope.selector",
+        "body": [
+            "var myselect = hope.selector({",
+            "    ele: '${1:.ele}',",
+            "    options:{",
+            "        autoHidebar: ${2:true},",
+            "        height: ${3:200}",
+            "    },",
+            "    on: {",
+            "        change: function(e) {${4}},",
+            "        toggle: function(e) {${5}},",
+            "        init: function(e) {${6}}",
+            "    },",
+            "});"
+        ],
+        "description": "hopeUI下拉框组件"
+    },
     "hopeUI.input.文本框": {
         "prefix": "hope.input",
         "body": [
