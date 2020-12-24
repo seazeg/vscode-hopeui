@@ -1,7 +1,7 @@
 {
-	"name": "vscode-hopeui-plugin",
-	"displayName": "vscode-hopeui-plugin",
-	"description": "hopeUI插件",
+	"name": "quick-hopeui",
+	"displayName": "quick-hopeui",
+	"description": "hopeUI快速生成插件",
 	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.52.0"
