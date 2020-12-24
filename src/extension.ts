@@ -1,20 +1,19 @@
-"use strict";
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-23 10:03:49
  * @LastEditTime : 2020-12-24 17:26:46
  * @Description  :
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.deactivate = exports.activate = void 0;
-const vscode = require("vscode");
-const treeView_1 = require("./treeView");
-const webView_1 = require("./webView");
-const LABEL_URI_MAP = new Map([
+
+import * as vscode from "vscode";
+import { TreeViewProvider } from "./treeView";
+import { createWebView } from "./webView";
+
+const LABEL_URI_MAP: any = new Map<string, string>([
     ["按钮(Button)", "基础控件-按钮-button--通用"],
     ["复选框(Checkbox)", "基础控件-复选框-checkbox--复选框-checkbox"],
-    ["文本框(Text)", "基础控件-文本框-text--通用"],
-    ["单选框(Radio)", "基础控件-单选框-radio--单选框-radio"],
+	["文本框(Text)", "基础控件-文本框-text--通用"],
+	["单选框(Radio)", "基础控件-单选框-radio--单选框-radio"],
     ["滚动条(Scrollbar)", "基础控件-滚动条-scrollbar--滚动条-scrollbar"],
     ["下拉框(Selector)", "基础控件-下拉框-selector--下拉框-selector"],
     ["联想文本框(suggest)", "基础控件-联想文本框-suggest--联想文本框-suggest"],
@@ -36,18 +35,27 @@ const LABEL_URI_MAP = new Map([
     ["响应式文本截断(Omit)", "常用函数-响应式文本截断-omit--响应式文本截断-omit"],
     ["响应式图片(Picture)", "常用函数-响应式图片-picture--响应式图片-picture"],
 ]);
-function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.init", () => {
-        vscode.window.showInformationMessage("hopeUI Complete!");
-    }));
-    treeView_1.TreeViewProvider.initTreeViewItem();
-    context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
-        // vscode.window.showInformationMessage(label);
-        const webView = webView_1.createWebView(context, vscode.ViewColumn.Active, LABEL_URI_MAP.get(label), label);
-        context.subscriptions.push(webView);
-    }));
+
+export function activate(context: vscode.ExtensionContext) {
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.init", () => {
+            vscode.window.showInformationMessage("hopeUI Complete!");
+        })
+    );
+
+    TreeViewProvider.initTreeViewItem();
+    context.subscriptions.push(
+        vscode.commands.registerCommand("itemClick", (label) => {
+            // vscode.window.showInformationMessage(label);
+            const webView = createWebView(
+                context,
+                vscode.ViewColumn.Active,
+				LABEL_URI_MAP.get(label),
+				label
+            );
+            context.subscriptions.push(webView);
+        })
+    );
 }
-exports.activate = activate;
-function deactivate() { }
-exports.deactivate = deactivate;
-//# sourceMappingURL=extension.js.map
+
+export function deactivate() {}
