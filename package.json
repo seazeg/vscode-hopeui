@@ -18,13 +18,13 @@
 	"main": "src/extension.js",
 	"activationEvents": [
 		"onCommand:ext.hopeui.init",
-		"onView:hopeUI.window"
+		"onView:hopeUI.api"
 	],
 	"contributes": {
 		"commands": [
 			{
 				"command": "ext.hopeui.init",
-				"title": "HopeUI"
+				"title": "初始化HopeUI"
 			}
 		],
 		"snippets": [
@@ -49,8 +49,12 @@
 		"views": {
 			"hopeUI": [
 				{
-					"id": "hopeUI.window",
+					"id": "hopeUI.api",
 					"name": "API文档"
+				},
+				{
+					"id": "hopeUI.tools",
+					"name": "其他工具"
 				}
 			]
 		}

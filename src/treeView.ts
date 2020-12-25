@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2020-12-24 17:24:04
+ * @LastEditTime : 2020-12-24 18:14:18
  * @Description  :
  */
 import {
@@ -111,6 +111,6 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
 
     public static initTreeViewItem() {
         const treeViewProvider = new TreeViewProvider();
-        window.registerTreeDataProvider("hopeUI.window", treeViewProvider);
+        window.registerTreeDataProvider("hopeUI.api", treeViewProvider);
     }
 }
