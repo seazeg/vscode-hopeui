@@ -4,7 +4,7 @@ exports.TreeViewProvider = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2020-12-24 18:14:18
+ * @LastEditTime : 2020-12-30 11:31:26
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -16,7 +16,7 @@ const ITEM_ICON_MAP = new Map([
     ["单选框(Radio)", "icon.svg"],
     ["滚动条(Scrollbar)", "icon.svg"],
     ["下拉框(Selector)", "icon.svg"],
-    ["联想文本框(suggest)", "icon.svg"],
+    ["联想文本框(Suggest)", "icon.svg"],
     ["多行文本框(Textarea)", "icon.svg"],
     ["栅格(Grid)", "icon.svg"],
     ["动画(Animate)", "icon.svg"],
@@ -65,7 +65,7 @@ class TreeViewProvider {
             "单选框(Radio)",
             "滚动条(Scrollbar)",
             "下拉框(Selector)",
-            "联想文本框(suggest)",
+            "联想文本框(Suggest)",
             "多行文本框(Textarea)",
             "栅格(Grid)",
             "轮播图(Carousel)",
