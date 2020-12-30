@@ -10,6 +10,7 @@
             "* ele: 元素 dom 节点",
             "* options: {",
             "*      autoHidebar: 是否自动显示隐藏滚动条 | Boolean",
+            "*      switchIcon: 自定义下拉图标 | String",
             "* }",
             "* on: {",
             "*      change: 选择完成后回调",
