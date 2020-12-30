@@ -746,6 +746,7 @@
             "* reader: 自定义内容方法 | Function",
             "* on: {",
             "*      jumpOver: 跳转后回调",
+            "*      init: 初始化完成后回调",
             "* }",
             "*/",
             "var mypager = hope.pager({",
