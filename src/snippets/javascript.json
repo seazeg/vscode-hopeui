@@ -747,6 +747,7 @@
             "* on: {",
             "*      jumpOver: 跳转后回调",
             "*      init: 初始化完成后回调",
+            "*      complete: 请求完成后回调",
             "* }",
             "*/",
             "var mypager = hope.pager({",
