@@ -1,4 +1,180 @@
 {
+    "hopeUI.utils.值是否为空": {
+        "prefix": "hope.utils.isEmpty",
+        "body": [
+            "hope.utils.isEmpty(${1:'校验值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.对象是否为空": {
+        "prefix": "hope.utils.isEmptyObject",
+        "body": [
+            "hope.utils.isEmptyObject(${1:'校验值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.是否为ios": {
+        "prefix": "hope.utils.isIos",
+        "body": [
+            "hope.utils.isIos()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.是否为android": {
+        "prefix": "hope.utils.isAndroid",
+        "body": [
+            "hope.utils.isAndroid()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.是否为PC端": {
+        "prefix": "hope.utils.isPC",
+        "body": [
+            "hope.utils.isPC()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.是否为闰年": {
+        "prefix": "hope.utils.isLeapYear",
+        "body": [
+            "hope.utils.isLeapYear(${1:'校验值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.身份证格式是否正确": {
+        "prefix": "hope.utils.isCardID",
+        "body": [
+            "hope.utils.isCardID(${1:'校验值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.综合校验判断": {
+        "prefix": "hope.utils.isVerify",
+        "body": [
+            "hope.utils.isVerify(${1:'num-数字 en-英文 chn-中文 lower-小写 upper-大写 phone-手机号码 tel-座机 url-网址 ip-IP地址 date-日期格式 email-邮箱 postal-邮政编码'}, ${2:'校验值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.获取IE版本": {
+        "prefix": "hope.utils.getIE",
+        "body": [
+            "hope.utils.getIE()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.获取url中指定参数值": {
+        "prefix": "hope.utils.getQueryParam",
+        "body": [
+            "hope.utils.getQueryParam(${1:'参数字段'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.url地址参数序列化": {
+        "prefix": "hope.utils.parseQueryParam",
+        "body": [
+            "hope.utils.parseQueryParam(${1:'url字符串'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.url参数对象反序列化": {
+        "prefix": "hope.utils.stringfyQueryParam",
+        "body": [
+            "hope.utils.stringfyQueryParam(${1:'序列化JSON对象'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.向url中追加参数": {
+        "prefix": "hope.utils.updateQueryStringParameter",
+        "body": [
+            "hope.utils.updateQueryStringParameter(${1:'url'},${2:'参数名'},${3:'参数值'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.获取滚动条的位置坐标": {
+        "prefix": "hope.utils.getScrollPosition",
+        "body": [
+            "hope.utils.getScrollPosition(${1:'dom元素'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.格式化日期": {
+        "prefix": "hope.utils.formatDate",
+        "body": [
+            "hope.utils.formatDate(${1:'日期字符串'},${2:'需要格式化的格式'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.生成指定范围的随机数": {
+        "prefix": "hope.utils.getRangeRandomNum",
+        "body": [
+            "hope.utils.getRangeRandomNum(${1:'最小值'},${2:'最大值'},${3:'float/int'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.随机生成不重复的GUID": {
+        "prefix": "hope.utils.guid",
+        "body": [
+            "hope.utils.guid()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.随机生成色值": {
+        "prefix": "hope.utils.getRandomColor",
+        "body": [
+            "hope.utils.getRandomColor()"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.密码强度校验": {
+        "prefix": "hope.utils.checkPassword",
+        "body": [
+            "//1-长度大于6且全数字,2-且包含字母,3-且含有大写字母,4-且有特殊字符",
+            "hope.utils.checkPassword(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.格式化成货币格式": {
+        "prefix": "hope.utils.getFormatCurrency",
+        "body": [
+            "hope.utils.getFormatCurrency(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.一次执行函数": {
+        "prefix": "hope.utils.once",
+        "body": [
+            "hope.utils.once(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.防抖函数": {
+        "prefix": "hope.utils.debounce",
+        "body": [
+            "hope.utils.debounce(${1:},${2:'间隔时间'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.节流函数": {
+        "prefix": "hope.utils.throttle",
+        "body": [
+            "hope.utils.throttle(${1:},${2:'间隔时间'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.过滤html操作符(防XSS)": {
+        "prefix": "hope.utils.filterHtmlCode",
+        "body": [
+            "hope.utils.filterHtmlCode(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
+    "hopeUI.utils.获取相对路径的绝对路径": {
+        "prefix": "hope.utils.getAbsoluteUrl",
+        "body": [
+            "hope.utils.getAbsoluteUrl(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
     "hopeUI.selector.下拉框": {
         "prefix": "hope.selector",
         "body": [
