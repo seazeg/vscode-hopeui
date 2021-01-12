@@ -100,7 +100,7 @@
     "hopeUI.utils.格式化日期": {
         "prefix": "hope.utils.formatDate",
         "body": [
-            "hope.utils.formatDate(${1:'日期字符串'},${2:'需要格式化的格式'})"
+            "hope.utils.formatDate(${1:'日期/时间戳'},${2:'需要格式化的格式'})"
         ],
         "description": "hopeUI工具函数"
     },
