@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-23 10:03:49
- * @LastEditTime : 2020-12-24 17:26:46
+ * @LastEditTime : 2021-01-13 15:50:49
  * @Description  :
  */
 
@@ -34,6 +34,7 @@ const LABEL_URI_MAP: any = new Map<string, string>([
     ["数字自增效果(Numup)", "常用函数-数字自增效果-numup--数字自增效果-numup"],
     ["响应式文本截断(Omit)", "常用函数-响应式文本截断-omit--响应式文本截断-omit"],
     ["响应式图片(Picture)", "常用函数-响应式图片-picture--响应式图片-picture"],
+    ["工具函数(Utils)", "常用函数-工具函数-utils--page"],
 ]);
 
 export function activate(context: vscode.ExtensionContext) {

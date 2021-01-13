@@ -4,7 +4,7 @@ exports.TreeViewProvider = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2020-12-30 11:31:26
+ * @LastEditTime : 2021-01-13 15:49:52
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -16,7 +16,7 @@ const ITEM_ICON_MAP = new Map([
     ["单选框(Radio)", "icon.svg"],
     ["滚动条(Scrollbar)", "icon.svg"],
     ["下拉框(Selector)", "icon.svg"],
-    ["联想文本框(Suggest)", "icon.svg"],
+    ["联想文本框(suggest)", "icon.svg"],
     ["多行文本框(Textarea)", "icon.svg"],
     ["栅格(Grid)", "icon.svg"],
     ["动画(Animate)", "icon.svg"],
@@ -34,6 +34,7 @@ const ITEM_ICON_MAP = new Map([
     ["数字自增效果(Numup)", "icon.svg"],
     ["响应式文本截断(Omit)", "icon.svg"],
     ["响应式图片(Picture)", "icon.svg"],
+    ["工具函数(Utils)", "icon.svg"],
 ]);
 class TreeItemNode extends vscode_1.TreeItem {
     constructor(label, collapsibleState) {
@@ -65,7 +66,7 @@ class TreeViewProvider {
             "单选框(Radio)",
             "滚动条(Scrollbar)",
             "下拉框(Selector)",
-            "联想文本框(Suggest)",
+            "联想文本框(suggest)",
             "多行文本框(Textarea)",
             "栅格(Grid)",
             "轮播图(Carousel)",
@@ -82,6 +83,7 @@ class TreeViewProvider {
             "数字自增效果(Numup)",
             "响应式文本截断(Omit)",
             "响应式图片(Picture)",
+            "工具函数(Utils)"
         ].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
     }
     static initTreeViewItem() {

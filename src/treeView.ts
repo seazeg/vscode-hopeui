@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2020-12-24 18:14:18
+ * @LastEditTime : 2021-01-13 15:49:52
  * @Description  :
  */
 import {
@@ -38,6 +38,7 @@ const ITEM_ICON_MAP = new Map<string, string>([
     ["数字自增效果(Numup)", "icon.svg"],
     ["响应式文本截断(Omit)", "icon.svg"],
     ["响应式图片(Picture)", "icon.svg"],
+    ["工具函数(Utils)", "icon.svg"],
 ]);
 
 export class TreeItemNode extends TreeItem {
@@ -100,6 +101,7 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
             "数字自增效果(Numup)",
             "响应式文本截断(Omit)",
             "响应式图片(Picture)",
+            "工具函数(Utils)"
         ].map(
             (item) =>
                 new TreeItemNode(
