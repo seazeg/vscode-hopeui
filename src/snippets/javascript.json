@@ -567,7 +567,6 @@
             "*      next: 下一帧回调",
             "*      open: 打开后回调",
             "*      close: 关闭后回调",
-            "*      init: 初始化回调",
             "* }",
             "*/",
             "hope.lightbox({",
@@ -586,7 +585,6 @@
             "        next:function (e) {${10}},",
             "        open:function (e) {${11}},",
             "        close:function (e) {${12}},",
-            "        init:function (e) {${13}}",
             "    },",
             "});"
         ],
