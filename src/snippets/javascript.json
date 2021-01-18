@@ -999,7 +999,7 @@
         "description": "hopeUI分页器组件"
     },
     "hopeUI.lazyload.图片懒加载": {
-        "prefix": "hope.scrollbar",
+        "prefix": "hope.lazyload",
         "body": [
             "/*",
             "* @Author       : Evan.G",
