@@ -4,7 +4,7 @@ exports.TreeViewProvider = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-01-13 15:49:52
+ * @LastEditTime : 2021-01-18 16:11:23
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -34,6 +34,7 @@ const ITEM_ICON_MAP = new Map([
     ["数字自增效果(Numup)", "icon.svg"],
     ["响应式文本截断(Omit)", "icon.svg"],
     ["响应式图片(Picture)", "icon.svg"],
+    ["图片懒加载(Lazyload)", "icon.svg"],
     ["工具函数(Utils)", "icon.svg"],
 ]);
 class TreeItemNode extends vscode_1.TreeItem {
@@ -83,6 +84,7 @@ class TreeViewProvider {
             "数字自增效果(Numup)",
             "响应式文本截断(Omit)",
             "响应式图片(Picture)",
+            "图片懒加载(Lazyload)",
             "工具函数(Utils)"
         ].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
     }
