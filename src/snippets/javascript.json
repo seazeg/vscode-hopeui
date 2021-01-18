@@ -717,6 +717,33 @@
         ],
         "description": "hopeUI图片响应式加载组件"
     },
+    "hopeUI.adapimage.图片充满居中": {
+        "prefix": "hope.adapimage",
+        "body": [
+            "/*",
+            "* @Author       : Evan.G",
+            "* @Description  : hopeUI图片充满居中组件",
+            "* @API          : http://seazeg.gitee.io/hopeui/",
+            "* ***********************************************",
+            "* ele: 元素 dom 节点",
+            "* options: {",
+            "*      noTransition: 是否无过渡效果 | Boolean",
+            "* }",
+            "* on: {",
+            "*      resize: 变化后回调",
+            "* }",
+            "*/",
+            "hope.adapimage({",
+            "    ele: '${1:.ele}',",
+            "    options: {",
+            "        noTransition:${2:false}",
+            "    on: {",
+            "        resize: function (e) {${3}}",
+            "    }",
+            "})"
+        ],
+        "description": "hopeUI图片充满居中组件"
+    },
     "hopeUI.omit.文字响应式截断": {
         "prefix": "hope.omit",
         "body": [
@@ -970,5 +997,35 @@
             "});"
         ],
         "description": "hopeUI分页器组件"
+    },
+    "hopeUI.lazyload.图片懒加载": {
+        "prefix": "hope.scrollbar",
+        "body": [
+            "/*",
+            "* @Author       : Evan.G",
+            "* @Description  : hopeUI图片懒加载组件",
+            "* @API          : http://seazeg.gitee.io/hopeui/",
+            "* ***********************************************",
+            "* ele: 元素 dom 节点",
+            "* options: {",
+            "*      responsive: 是否是响应式图片加载 | Boolean",
+            "*      breakpoint: 断点对象 | Object | 每个端的最min断点，默认xl.1200,md.750",
+            "*      adapimage: 是否开启图片充满 | Boolean",
+            "* }",
+            "* on: {",
+            "*      init: 初始化回调",
+            "*      scroll: 滚动的位移后回调",
+            "* }",
+            "*/",
+            "hope.lazyload({",
+            "    ele: '${1:#ele}',",
+            "    options:{",
+            "        responsive: ${2:true},",
+            "        breakpoint: ${3:{}}",
+            "        adapimage: ${3:true}",
+            "    }",
+            "})"
+        ],
+        "description": "hopeUI图片懒加载组件"
     }
 }
