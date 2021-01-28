@@ -1,0 +1,11 @@
+{
+    "name": "hopeUItheme",
+    "scope":[
+        "hopeUI.api"
+    ],
+    "settings": {
+        "foreground": "#cccccc",
+        "fontStyle": "italic",
+        "background": "#ffffff"
+    }
+}

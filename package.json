@@ -51,13 +51,16 @@
 				{
 					"id": "hopeUI.api",
 					"name": "API文档"
-				},
-				{
-					"id": "hopeUI.tools",
-					"name": "其他工具"
 				}
 			]
-		}
+		},
+		"theme": [
+			{
+			  "id": "hopeUItheme",
+			  "label": "HopeUItheme",
+			  "path": "src/theme/theme.json"
+			}
+		  ]
 	},
 	"scripts": {
 		"lint": "eslint .",
