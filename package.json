@@ -2,7 +2,7 @@
 	"name": "quick-hopeui",
 	"displayName": "Quick HopeUI",
 	"description": "hopeUI快速生成插件",
-	"version": "0.0.21",
+	"version": "0.0.22",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -56,11 +56,11 @@
 		},
 		"theme": [
 			{
-			  "id": "hopeUItheme",
-			  "label": "HopeUItheme",
-			  "path": "src/theme/theme.json"
+				"id": "hopeUItheme",
+				"label": "HopeUItheme",
+				"path": "src/theme/theme.json"
 			}
-		  ]
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
