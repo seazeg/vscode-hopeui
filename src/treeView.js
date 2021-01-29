@@ -4,7 +4,7 @@ exports.TreeViewProvider = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-01-28 18:07:23
+ * @LastEditTime : 2021-01-29 09:43:03
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -68,7 +68,6 @@ class TreeViewProvider {
         if (element) {
             console.log(element);
             if (element.label == "基础控件") {
-                console.log("基础控件");
                 return [
                     "按钮 [Button]",
                     "复选框 [Checkbox]",
@@ -83,7 +82,6 @@ class TreeViewProvider {
                 ].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
             }
             else if (element.label == "复用组件") {
-                console.log("复用组件");
                 return [
                     "轮播图 [Carousel]",
                     "日期时间选择 [Datepicker]",
@@ -98,7 +96,6 @@ class TreeViewProvider {
                 ].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
             }
             else if (element.label == "常用函数") {
-                console.log("常用函数");
                 return [
                     "图片充满居中 [Adapimage]",
                     "数字自增效果 [Numup]",
