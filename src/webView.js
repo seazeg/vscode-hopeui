@@ -4,7 +4,7 @@ exports.getIframeHtml = exports.createWebView = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:43:11
- * @LastEditTime : 2021-01-29 09:40:06
+ * @LastEditTime : 2021-01-29 11:20:22
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -53,6 +53,7 @@ function getIframeHtml(label) {
                 width: 100%;
                 height: 100%;
             }
+
         </style>
         <script>
             const vscode = acquireVsCodeApi();

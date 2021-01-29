@@ -1,0 +1,46 @@
+@import "./config.less";
+
+.hopeui-form-radio {
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+
+    * {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+    i {
+        margin-right: 8px;
+        font-size: 20px;
+        color: #c2c2c2;
+        display: inline-block;
+    }
+
+    &.hopeui-form-radio {
+        color:#666;
+        > i:hover {
+            color: @primaryColor;
+        }
+    }
+    
+    &.hopeui-form-radioed {
+        > i {
+            color: @primaryColor;
+        }
+    }
+    
+    &.hopeui-radio-disabled {
+        cursor: not-allowed !important;
+        > i {
+            color: @gray_light !important;
+        }
+        >span{
+            color: @gray_normal !important;
+        }
+    }
+    
+}
+

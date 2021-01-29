@@ -1,0 +1,118 @@
+@import "./config.less";
+
+.hopeui-form-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    .hopeui-input {
+        padding: 0 25px 0 10px;
+        line-height: 38px;
+        height: 38px;
+        font-size: 14px;
+        color: @darkFontColor;
+    }
+    .hopeui-select-title {
+        > input {
+            cursor: pointer;
+        }
+    }
+    .hopeui-select-list {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 39px;
+        padding: 5px 0;
+        z-index: 899;
+        // min-width: 100%;
+        width: 100%;
+        border: 1px solid @gray_normal;
+        max-height: 300px;
+        // overflow: auto;
+        background-color: @lightFontColor;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        .option {
+            padding: 0 25px 0 10px;
+            line-height: 38px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            color: @darkFontColor;
+            font-size: 14px;
+            &.hopeui-select-this {
+                background-color: @primaryColor;
+                color: @lightFontColor;
+                &:hover {
+                    background-color: @primaryColor;
+                    color: @lightFontColor;
+                }
+            }
+
+            &.hopeui-select-tips {
+                color: #666;
+            }
+
+            &:hover {
+                background-color: @gray_superlight;
+                color: @darkFontColor;
+            }
+        }
+        .groupTitle {
+            font-size: 12px;
+            color: #999;
+            padding: 0 10px;
+            line-height: 36px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .group {
+            padding: 0 20px;
+        }
+    }
+
+    .hopeui-edge {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        color: #c2c2c2;
+    }
+
+    .hopeui-default-switchIcon {
+        margin-top: -3px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 6px;
+        border-top-color: #c2c2c2;
+        border-top-style: solid;
+    }
+}
+
+&.hopeui-form-selected {
+    .hopeui-select-list {
+        display: block;
+    }
+    .hopeui-edge {
+        margin-top: -9px;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        margin-top: -3px\9;
+    }
+}
+
+.hopeui-select-phone {
+    position: absolute;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}

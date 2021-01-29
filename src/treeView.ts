@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-01-29 09:43:03
+ * @LastEditTime : 2021-01-29 17:53:12
  * @Description  :
  */
 import {
@@ -14,7 +14,7 @@ import {
 import { join } from "path";
 
 const ITEM_ICON_MAP = new Map<string, string>([
-    ["获取最新版", "icon.svg"],
+    ["获取最新版", "version.svg"],
     ["按钮 [Button]", "controls.svg"],
     ["复选框 [Checkbox]", "controls.svg"],
     ["文本框 [Text]", "controls.svg"],
@@ -148,7 +148,7 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
                 );
             }
         } else {
-            return ["基础控件", "复用组件", "常用函数"].map(
+            return ["基础控件", "复用组件", "常用函数", "HopeUI"].map(
                 (item) =>
                     new TreeItemNode(
                         item as string,

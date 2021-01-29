@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-01-29 09:42:42
+ * @LastEditTime : 2021-01-29 17:52:20
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -10,6 +10,10 @@ exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
 const treeView_1 = require("./treeView");
 const webView_1 = require("./webView");
+const fs = require("fs");
+const path = require("path");
+// const less = require("less");
+// const shell = require("shelljs");
 const LABEL_URI_MAP = new Map([
     ["获取最新版", "概览-welcome-to-hopeui--welcome-to-hope-ui"],
     ["按钮 [Button]", "基础控件-按钮-button--通用"],
@@ -55,8 +59,75 @@ const LABEL_URI_MAP = new Map([
     ["工具函数 [Utils]", "常用函数-工具函数-utils--page"],
 ]);
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.init", () => {
-        vscode.window.showInformationMessage("hopeUI Complete!");
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.breakpoint", () => {
+        vscode.window
+            .showInputBox({
+            password: false,
+            ignoreFocusOut: true,
+            placeHolder: "断点值配置",
+            prompt: "以逗号(,)隔开 如:1200,750 ",
+        })
+            .then(function (res) {
+            console.log("[断点输入]" + res);
+            let tmp = "";
+            if (!!res) {
+                let arr = res.split(",");
+                let max = arr.map(function (item) {
+                    return item + "px";
+                });
+                let min = arr.map(function (item) {
+                    return item + "px";
+                });
+                min.shift();
+                min.push("1px");
+                vscode.window
+                    .showInputBox({
+                    password: false,
+                    ignoreFocusOut: true,
+                    placeHolder: "断点范围的命名配置",
+                    prompt: "以逗号(,)隔开 如:md,xs ",
+                })
+                    .then(function (input) {
+                    console.log("[命名输入]" + input);
+                    if (!!input) {
+                        let arr = input.split(",");
+                        let name = arr.map(function (item) {
+                            return "hopeui-col-" + item;
+                        });
+                        fs.readFile(__dirname +
+                            "/generate/styles/config_ext.less", "utf-8", function (error, data) {
+                            tmp = data
+                                .replace("@max: 1200px, 750px;", `@max: ${max.join(",")};`)
+                                .replace("@min: 750px, 1px;", `@min: ${min.join(",")};`)
+                                .replace("@name: hopeui-col-md, hopeui-col-xs;", `@name: ${name.join(",")};`);
+                            fs.writeFile(__dirname +
+                                "/generate/styles/config.less", tmp, function (error) {
+                                if (error)
+                                    console.error(error);
+                                console.log("配置生成完毕");
+                                let terminalA = vscode.window.createTerminal({
+                                    name: "我是终端的名字",
+                                });
+                                // terminalA.show(
+                                //     false
+                                // );
+                                console.log("root_path", vscode.env);
+                                terminalA.sendText(`${path.resolve(__dirname, "../node_modules/less/bin/lessc")} ${__dirname}/generate/hopeui.less ${__dirname}/libs/hopeui.min.css --clean-css="advanced"`);
+                            });
+                        });
+                    }
+                    else {
+                        vscode.window.showInformationMessage("格式有误");
+                    }
+                });
+            }
+            else {
+                vscode.window.showInformationMessage("格式有误");
+            }
+        });
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
+        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
     }));
     treeView_1.TreeViewProvider.initTreeViewItem();
     context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
@@ -64,8 +135,13 @@ function activate(context) {
             label != "复用组件" &&
             label != "常用函数" &&
             label != "HopeUI") {
-            const webView = webView_1.createWebView(context, vscode.ViewColumn.Active, LABEL_URI_MAP.get(label), label);
-            context.subscriptions.push(webView);
+            if (label == "获取最新版") {
+                vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
+            }
+            else {
+                const webView = webView_1.createWebView(context, vscode.ViewColumn.Active, LABEL_URI_MAP.get(label), label);
+                context.subscriptions.push(webView);
+            }
         }
     }));
 }

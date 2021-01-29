@@ -1,0 +1,95 @@
+@import "./config.less";
+
+.hopeui-form-checkbox {
+    position: relative;
+    height: auto !important;
+    line-height: normal !important;
+    min-width: 18px;
+    min-height: 18px;
+    border: none !important;
+    margin-right: 0;
+    padding-left: 28px;
+    padding-right: 0;
+    background: 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+        i {
+            border-color: @primaryColor;
+        }
+    }
+
+    &.hopeui-checkbox-disabled {
+        cursor: not-allowed !important;
+        > i {
+            color: #ffffff !important;
+            border-color: @gray_light;
+        }
+        > span {
+            color: @gray_normal !important;
+        }
+
+        &:hover {
+            i {
+                color: #ffffff !important;
+                border-color: @gray_light;
+            }
+        }
+    }
+
+    > span {
+        padding-left: 0;
+        padding-right: 15px;
+        line-height: 18px;
+        background: 0 0;
+        color: #666;
+        height: 100%;
+        font-size: 14px;
+        border-radius: 2px 0 0 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    > i {
+        position: absolute;
+        top: 0;
+        right: auto;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #c2c2c2;
+        font-size: 12px;
+        border-radius: 2px;
+        background-color: @lightFontColor;
+        -webkit-transition: 0.1s linear;
+        transition: 0.1s linear;
+        text-align: center;
+        color: #ffffff;
+    }
+}
+
+&.hopeui-form-checked {
+    border-color: @primaryColor !important;
+    i {
+        border-color: @primaryColor !important;
+        background-color: @primaryColor;
+        color: @lightFontColor;
+    }
+}
+
+&.hopeui-form-checked:hover {
+    border-color: @primaryColor !important;
+}
+
+&.hopeui-form-checked:hover {
+    i {
+        border-color: @primaryColor !important;
+        background-color: @primaryColor;
+        color: @lightFontColor;
+    }
+}

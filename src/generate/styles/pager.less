@@ -1,0 +1,109 @@
+@import "./config.less";
+
+.hopeui-pager {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0;
+    font-size: 0;
+
+    > span,
+    .hopeui-pager-omit {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left:15px;
+        padding-right:15px;
+        height: 28px;
+        line-height: 28px;
+        margin: 0 -1px 0 0;
+        background-color: #fff;
+        color: @darkFontColor + 30;
+        font-size: 12px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e2e2e2;
+        user-select: none;
+    }
+
+    span:hover {
+        color: @primaryColor;
+        cursor: pointer;
+    }
+
+    .hopeui-pager-omit {
+        color: @gray_normal - 100;
+    }
+
+    .hopeui-pager-count {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0;
+        border: none;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 15px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 -1px 0 0;
+        color: @darkFontColor + 30;
+        font-size: 12px;
+        user-select: none;
+        font-style: normal;
+    }
+
+    .hopeui-pager-jump {
+        height: 30px;
+        line-height: 30px;
+        color: @darkFontColor + 30;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        input {
+            width: 40px;
+            margin: 0 10px;
+            padding: 0 3px;
+            text-align: center;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 2px;
+            vertical-align: top;
+            background-color: #fff;
+            box-sizing: border-box;
+            border: 1px solid #e2e2e2;
+            font-size: 12px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 0 10px;
+            cursor: pointer;
+            text-align: center;
+            height: 28px;
+            line-height: 26px;
+            border-radius: 2px;
+            vertical-align: top;
+            background-color: #fff;
+            box-sizing: border-box;
+            border: 1px solid #e2e2e2;
+            color: @darkFontColor + 30;
+            font-size: 12px;
+        }
+
+        button:hover {
+            color: @primaryColor;
+        }
+    }
+
+    .hopeui-pager-disabled {
+        color: @gray_normal !important;
+        cursor: not-allowed !important;
+    }
+
+    .hopeui-pager-cur {
+        background-color: @primaryColor;
+        color: #fff !important;
+        border: 1px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: @primaryColor;
+    }
+}

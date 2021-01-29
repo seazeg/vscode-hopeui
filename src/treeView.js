@@ -4,13 +4,13 @@ exports.TreeViewProvider = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-01-29 09:43:03
+ * @LastEditTime : 2021-01-29 17:53:12
  * @Description  :
  */
 const vscode_1 = require("vscode");
 const path_1 = require("path");
 const ITEM_ICON_MAP = new Map([
-    ["获取最新版", "icon.svg"],
+    ["获取最新版", "version.svg"],
     ["按钮 [Button]", "controls.svg"],
     ["复选框 [Checkbox]", "controls.svg"],
     ["文本框 [Text]", "controls.svg"],
@@ -110,7 +110,7 @@ class TreeViewProvider {
             }
         }
         else {
-            return ["基础控件", "复用组件", "常用函数"].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.Expanded));
+            return ["基础控件", "复用组件", "常用函数", "HopeUI"].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.Expanded));
         }
     }
     static initTreeViewItem() {

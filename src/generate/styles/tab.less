@@ -1,0 +1,111 @@
+@import "./config.less";
+
+.hopeui-tab {
+    .hopeui-tab-title {
+        position: relative;
+        left: 0;
+        height: 40px;
+        white-space: nowrap;
+        font-size: 0;
+        transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-top: -1px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        ul {
+            border-bottom: 1px solid @gray_light;
+        }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            position: relative;
+            line-height: 39px;
+            min-width: 65px;
+            padding: 0 15px;
+            text-align: center;
+            cursor: pointer;
+            color: @neutralFontColor;
+
+            &.hopeui-tab-this {
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    content: "";
+                    width: 100%;
+                    height: 40px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-bottom-color: @lightFontColor;
+                    border-radius: 2px 2px 0 0;
+                    box-sizing: border-box;
+                    pointer-events: none;
+                    color: @gray_light;
+                }
+            }
+        }
+    }
+
+    .hopeui-tab-content {
+        overflow: hidden;
+        &.hopeui-tab-switch {
+            .hopeui-tab-item {
+                display: inline-block;
+                min-height: 50px;
+            }
+        }
+        .hopeui-tab-item {
+            display: none;
+            min-height: 50px;
+        }
+
+        .hopeui-tab-inner {
+            font-size: 0;
+            padding: 10px 20px;
+        }
+    }
+
+    &.hopeui-tab-simple {
+        .hopeui-tab-title {
+            li {
+                &.hopeui-tab-this {
+                    color: @primaryColor;
+                    &:after {
+                        border: none;
+                        border-radius: 0;
+                        border-bottom: 2px solid @primaryColor;
+                    }
+                }
+            }
+        }
+    }
+
+    &.hopeui-tab-card {
+        border: 1px solid @gray_light;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+        .hopeui-tab-title {
+            background-color: @gray_superlight;
+            li {
+                margin-right: -1px;
+                margin-left: -1px;
+                &.hopeui-tab-this {
+                    color: @neutralFontColor;
+                    background-color: @lightFontColor;
+                    &:after {
+                        border-top: none;
+                        border-width: 1px;
+                        border-bottom-color: @lightFontColor;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
