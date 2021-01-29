@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:43:11
- * @LastEditTime : 2021-01-29 09:40:06
+ * @LastEditTime : 2021-01-29 11:20:22
  * @Description  : 
  */
 import { ExtensionContext, ViewColumn, WebviewPanel, window, commands } from 'vscode';
@@ -64,6 +64,7 @@ export function getIframeHtml(label: string) {
                 width: 100%;
                 height: 100%;
             }
+
         </style>
         <script>
             const vscode = acquireVsCodeApi();

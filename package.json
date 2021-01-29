@@ -11,7 +11,7 @@
 		"url": "http://seazeg.gitee.io/hopeui"
 	},
 	"publisher": "EvanZhou",
-	"icon": "src/images/icon.png",
+	"icon": "src/images/UI.png",
 	"categories": [
 		"Snippets"
 	],
@@ -42,7 +42,7 @@
 				{
 					"id": "hopeUI",
 					"title": "hopeUI",
-					"icon": "src/images/icon.svg"
+					"icon": "src/images/UI.svg"
 				}
 			]
 		},
@@ -53,14 +53,7 @@
 					"name": "API文档"
 				}
 			]
-		},
-		"theme": [
-			{
-				"id": "hopeUItheme",
-				"label": "HopeUItheme",
-				"path": "src/theme/theme.json"
-			}
-		]
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
