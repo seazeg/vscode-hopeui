@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>video</title>
+        <link href="videojs/video-js.css" rel="stylesheet" />
+        <!-- <link href="videojs/videojs.watermark.css" rel="stylesheet" /> -->
+        <script src="videojs/ie8/videojs-ie8.js"></script>
+
+        <script src="jquery.js"></script>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .video-js .vjs-big-play-button {
+                width: 2em;
+                height: 2em;
+                top: 50%;
+                left: 50%;
+                margin: -1em 0 0 -1em;
+                border-radius: 3em;
+                line-height: 1.9em;
+                z-index: 1000000;
+            }
+        </style>
+        <script>
+            var siteUrl = "https://imagegroup1.haier.com/images/hopeLive";
+        </script>
+    </head>
+
+    <body>
+        <video
+            id="video"
+            class="video-js"
+            muted
+            controls
+            autoplay
+            preload="auto"
+            poster=""
+            data-setup="{}"
+            webkit-playsinline="true"
+            x-webkit-airplay="true"
+            playsinline="true"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+        >
+            <source src="" type="" />
+            <p class="vjs-no-js">
+                <object width="100%" height="100%" id="object">
+                    <param name="movie" value="/videojs/video-js.swf" />
+                </object>
+            </p>
+        </video>
+
+        <script>
+            function getIE() {
+                var userAgent = navigator.userAgent;
+                var isIE =
+                    userAgent.indexOf("compatible") > -1 &&
+                    userAgent.indexOf("MSIE") > -1;
+                var isEdge = userAgent.indexOf("Edge") > -1 && !isIE;
+                var isIE11 =
+                    userAgent.indexOf("Trident") > -1 &&
+                    userAgent.indexOf("rv:11.0") > -1;
+                if (isIE) {
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                    reIE.test(userAgent);
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+                    if (fIEVersion == 7) {
+                        return 7;
+                    } else if (fIEVersion == 8) {
+                        return 8;
+                    } else if (fIEVersion == 9) {
+                        return 9;
+                    } else if (fIEVersion == 10) {
+                        return 10;
+                    } else {
+                        return 6;
+                    }
+                } else if (isEdge) {
+                    return 999;
+                } else if (isIE11) {
+                    return 999;
+                } else {
+                    return 999;
+                }
+            }
+
+            var os = (function () {
+                var ua = navigator.userAgent,
+                    isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                    isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                    isAndroid = /(?:Android)/.test(ua),
+                    isFireFox = /(?:Firefox)/.test(ua),
+                    isChrome = /(?:Chrome|CriOS)/.test(ua),
+                    isTabvar =
+                        /(?:iPad|PlayBook)/.test(ua) ||
+                        (isAndroid && !/(?:Mobile)/.test(ua)) ||
+                        (isFireFox && /(?:Tabvar)/.test(ua)),
+                    isPhone = /(?:iPhone)/.test(ua) && !isTabvar,
+                    isPc = !isPhone && !isAndroid && !isSymbian;
+                return {
+                    isTabvar: isTabvar,
+                    isPhone: isPhone,
+                    isAndroid: isAndroid,
+                    isPc: isPc,
+                };
+            })();
+
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
+                }
+                return false;
+            }
+            $("#video").width($(window).width()).height($(window).height());
+
+            if (getIE()!=999) {
+                //rtmp
+                $("#video")
+                    .find("source")
+                    .attr(
+                        "src",
+                        decodeURIComponent(getQueryVariable("rtmp") || "")
+                    )
+                    .attr("type", "rtmp/flv");
+            } else {
+                //hls
+                $("#video")
+                    .find("source")
+                    .attr(
+                        "src",
+                        decodeURIComponent(getQueryVariable("hls") || "")
+                    )
+                    .attr("type", "application/x-mpegURL");
+            }
+        </script>
+        <script src="videojs/video.js"></script>
+        <script src="videojs/videojs-hlsjs-plugin.js"></script>
+        <!-- <script src="videojs/videojs.watermark.js"></script> -->
+        <script>
+            if (getIE()!=999) {
+                //rtmp
+                videojs.options.flash.swf = siteUrl + "/videojs/video-js.swf";
+                var rtmp = videojs(
+                    "video",
+                    {
+                        errorDisplay: true,
+                    },
+                    function () {
+                        if (this.error_) {
+                            this.createModal(function () {
+                                var ele = document.createElement("div");
+                                ele.innerHTML = '<object style="position: absolute;top: 0;left: 0;width:100%;height:100%"><param name="movie" value="videojs/video-js.swf"></object>';
+                                return ele;
+                            });
+                        }
+                    }
+                );
+
+                // rtmp.watermark({
+                //     file: "videojs/mark.png",
+                //     xpos: 50,
+                //     ypos: 50,
+                //     xrepeat: 0,
+                //     opacity: 0.5,
+                // });
+            } else {
+                // videojs.Html5Hlsjs.addHook(
+                //     "beforeinitialize",
+                //     (videojsPlayer, hlsjsInstance) => {}
+                // );
+                var hls = videojs("video", function () {
+                    setTimeout(function () {
+                        $("video").css({
+                            width: "100%",
+                            height: "100%",
+                        });
+                    }, 500);
+                });
+
+                hls.on("fullscreenchange", function (e) {
+                    $("video").css({
+                        width: "100%",
+                        height: "100%",
+                    });
+
+                    // $(".vjs-watermark")
+                    //     .width($(window).width())
+                    //     .height($(window).height() - 50);
+                });
+
+                // hls.watermark({
+                //     content: getQueryVariable("code"),
+                //     xpos: 0,
+                //     ypos: 0,
+                //     xrepeat: 0,
+                //     opacity: 0.5,
+                // });
+            }
+        </script>
+    </body>
+</html>
