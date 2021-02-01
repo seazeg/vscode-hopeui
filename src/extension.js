@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-01-29 17:52:20
+ * @LastEditTime : 2021-02-01 09:59:44
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -108,11 +108,8 @@ function activate(context) {
                                 let terminalA = vscode.window.createTerminal({
                                     name: "我是终端的名字",
                                 });
-                                // terminalA.show(
-                                //     false
-                                // );
-                                console.log("root_path", vscode.env);
-                                terminalA.sendText(`${path.resolve(__dirname, "../node_modules/less/bin/lessc")} ${__dirname}/generate/hopeui.less ${__dirname}/libs/hopeui.min.css --clean-css="advanced"`);
+                                terminalA.show(false);
+                                terminalA.sendText(`${path.resolve(__dirname, "../node_modules/less/bin/lessc")} ${__dirname}/generate/hopeui.less hopeui.min.css --clean-css="advanced"`);
                             });
                         });
                     }

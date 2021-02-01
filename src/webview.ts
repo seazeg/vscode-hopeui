@@ -1,33 +1,54 @@
 /*
- * @Author       : Evan.G
- * @Date         : 2020-12-24 15:43:11
- * @LastEditTime : 2021-01-29 11:20:22
- * @Description  : 
+ * @Author : Evan.G
+ * @Date : 2020-12-24 15:43:11
+ * @LastEditTime : 2021-02-01 11:28:44
+ * @Description :
  */
-import { ExtensionContext, ViewColumn, WebviewPanel, window, commands } from 'vscode';
+import {
+    ExtensionContext,
+    ViewColumn,
+    WebviewPanel,
+    window,
+    commands,
+    Uri,
+} from "vscode";
+const path = require("path");
+const fs = require("fs");
 
-let webviewPanel : WebviewPanel | undefined;
+let webviewPanel: WebviewPanel | undefined;
+
+function getExtensionFileVscodeResource(
+    context: ExtensionContext,
+    relativePath: string
+) {
+    const diskPath = Uri.file(path.join(context.extensionPath, relativePath));
+    return diskPath.with({
+        scheme: "vscode-resource"
+    }).toString();
+}
 
 export function createWebView(
     context: ExtensionContext,
     viewColumn: ViewColumn,
     label: string,
-    name:string
+    name: string
 ) {
-    if(webviewPanel === undefined) {
-        webviewPanel = window.createWebviewPanel(
-            'webView',
-            name,
-            viewColumn,
-            {
-                retainContextWhenHidden: true,
-                enableScripts: true
-            }
-        );
-        webviewPanel.webview.html = getIframeHtml(label);
+    let path = getExtensionFileVscodeResource(context, "src/docs/hopeui/iframe.html");
+    if (webviewPanel === undefined) {
+        webviewPanel = window.createWebviewPanel("webView", name, viewColumn, {
+            retainContextWhenHidden: true,
+            enableScripts: true,
+        });
+       
+        webviewPanel.webview.html = getIframeHtml(path, label);
     } else {
+        console.log(`${path}?id=${label}&viewMode=docs`);
         webviewPanel.title = name;
-        webviewPanel.webview.postMessage({label: label});
+        webviewPanel.webview.postMessage({
+            // path: path,
+            // label: label
+            params: `?id=${label}&viewMode=docs`
+        });
         webviewPanel.reveal();
     }
 
@@ -35,21 +56,22 @@ export function createWebView(
         webviewPanel = undefined;
     });
 
-    webviewPanel.webview.onDidReceiveMessage(message => {
-        switch(message.command) {
-            case 'iframeLabel': 
+    webviewPanel.webview.onDidReceiveMessage((message) => {
+        switch (message.command) {
+            case "iframeLabel":
                 window.showInformationMessage(message.text);
         }
     });
-    
+
     return webviewPanel;
 }
 
-export function getIframeHtml(label: string) {
+export function getIframeHtml(path: string, label: string) {
     return `
     <!DOCTYPE html>
     <html lang="en">
-        <head>
+
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
@@ -60,30 +82,26 @@ export function getIframeHtml(label: string) {
                 width: 100%;
                 height: 100%;
             }
+
             #iframe {
                 width: 100%;
                 height: 100%;
             }
-
         </style>
         <script>
             const vscode = acquireVsCodeApi();
             window.addEventListener('message', (e) => {
-                if(e.data.label) {
-                    document.getElementById("iframe").src = 'http://seazeg.gitee.io/hopeui/iframe.html?id='+ e.data.label +'&viewMode=docs'
-                }
-                if(e.data.iframeLabel) {
-                    vscode.postMessage({
-                        command: 'iframeLabel',
-                        text: e.data.iframeLabel+'',
-                    })
+                if (e.data.params) {
+                    document.getElementById("iframe").src = document.getElementById("iframe").src.split('?')[0] + e.data.params        
                 }
             })
         </script>
-        </head>
-        <body>
-            <iframe id='iframe' src="http://seazeg.gitee.io/hopeui/iframe.html?id=${label}&viewMode=docs" frameborder=0 scrolling="auto"></iframe>
-        </body>
+    </head>
+
+    <body>
+        <iframe id='iframe' src="${path}?id=${label}&viewMode=docs" frameborder=0 scrolling="auto"></iframe>
+    </body>
+
     </html>
     `;
 }

@@ -2,43 +2,58 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getIframeHtml = exports.createWebView = void 0;
 /*
- * @Author       : Evan.G
- * @Date         : 2020-12-24 15:43:11
- * @LastEditTime : 2021-01-29 11:20:22
- * @Description  :
+ * @Author : Evan.G
+ * @Date : 2020-12-24 15:43:11
+ * @LastEditTime : 2021-02-01 11:28:44
+ * @Description :
  */
 const vscode_1 = require("vscode");
+const path = require("path");
+const fs = require("fs");
 let webviewPanel;
+function getExtensionFileVscodeResource(context, relativePath) {
+    const diskPath = vscode_1.Uri.file(path.join(context.extensionPath, relativePath));
+    return diskPath.with({
+        scheme: "vscode-resource"
+    }).toString();
+}
 function createWebView(context, viewColumn, label, name) {
+    let path = getExtensionFileVscodeResource(context, "src/docs/hopeui/iframe.html");
     if (webviewPanel === undefined) {
-        webviewPanel = vscode_1.window.createWebviewPanel('webView', name, viewColumn, {
+        webviewPanel = vscode_1.window.createWebviewPanel("webView", name, viewColumn, {
             retainContextWhenHidden: true,
-            enableScripts: true
+            enableScripts: true,
         });
-        webviewPanel.webview.html = getIframeHtml(label);
+        webviewPanel.webview.html = getIframeHtml(path, label);
     }
     else {
+        console.log(`${path}?id=${label}&viewMode=docs`);
         webviewPanel.title = name;
-        webviewPanel.webview.postMessage({ label: label });
+        webviewPanel.webview.postMessage({
+            // path: path,
+            // label: label
+            params: `?id=${label}&viewMode=docs`
+        });
         webviewPanel.reveal();
     }
     webviewPanel.onDidDispose(() => {
         webviewPanel = undefined;
     });
-    webviewPanel.webview.onDidReceiveMessage(message => {
+    webviewPanel.webview.onDidReceiveMessage((message) => {
         switch (message.command) {
-            case 'iframeLabel':
+            case "iframeLabel":
                 vscode_1.window.showInformationMessage(message.text);
         }
     });
     return webviewPanel;
 }
 exports.createWebView = createWebView;
-function getIframeHtml(label) {
+function getIframeHtml(path, label) {
     return `
     <!DOCTYPE html>
     <html lang="en">
-        <head>
+
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
@@ -49,30 +64,26 @@ function getIframeHtml(label) {
                 width: 100%;
                 height: 100%;
             }
+
             #iframe {
                 width: 100%;
                 height: 100%;
             }
-
         </style>
         <script>
             const vscode = acquireVsCodeApi();
             window.addEventListener('message', (e) => {
-                if(e.data.label) {
-                    document.getElementById("iframe").src = 'http://seazeg.gitee.io/hopeui/iframe.html?id='+ e.data.label +'&viewMode=docs'
-                }
-                if(e.data.iframeLabel) {
-                    vscode.postMessage({
-                        command: 'iframeLabel',
-                        text: e.data.iframeLabel+'',
-                    })
+                if (e.data.params) {
+                    document.getElementById("iframe").src = document.getElementById("iframe").src.split('?')[0] + e.data.params        
                 }
             })
         </script>
-        </head>
-        <body>
-            <iframe id='iframe' src="http://seazeg.gitee.io/hopeui/iframe.html?id=${label}&viewMode=docs" frameborder=0 scrolling="auto"></iframe>
-        </body>
+    </head>
+
+    <body>
+        <iframe id='iframe' src="${path}?id=${label}&viewMode=docs" frameborder=0 scrolling="auto"></iframe>
+    </body>
+
     </html>
     `;
 }
