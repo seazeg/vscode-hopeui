@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-01 11:44:42
+ * @LastEditTime : 2021-02-03 16:50:17
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -11,6 +11,7 @@ const vscode = require("vscode");
 const treeView_1 = require("./treeView");
 const webView_1 = require("./webView");
 const styleGenerated_1 = require("./styleGenerated");
+const rempx_1 = require("./rempx");
 // const less = require("less");
 // const shell = require("shelljs");
 const LABEL_URI_MAP = new Map([
@@ -60,6 +61,12 @@ const LABEL_URI_MAP = new Map([
 function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.breakpoint", () => {
         styleGenerated_1.styleGenerated();
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
+        rempx_1.rempx("r2p");
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
+        rempx_1.rempx("p2r");
     }));
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
         vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));

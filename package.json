@@ -19,17 +19,27 @@
 	"activationEvents": [
 		"onCommand:ext.hopeui.breakpoint",
 		"onCommand:ext.hopeui.open",
+		"onCommand:ext.hopeui.rem2px",
+		"onCommand:ext.hopeui.px2rem",
 		"onView:hopeUI.api"
 	],
 	"contributes": {
 		"commands": [
 			{
 				"command": "ext.hopeui.breakpoint",
-				"title": "HopeUI样式生成"
+				"title": "[HopeUI] 样式生成"
 			},
 			{
 				"command": "ext.hopeui.open",
-				"title": "获取HopeUI最新版本"
+				"title": "[HopeUI] 获取最新版本"
+			},
+			{
+				"command": "ext.hopeui.rem2px",
+				"title": "[HopeUI] Rem转换成Px"
+			},
+			{
+				"command": "ext.hopeui.px2rem",
+				"title": "[HopeUI] Px转换成Rem"
 			}
 		],
 		"snippets": [
@@ -75,6 +85,7 @@
 		"@types/vscode": "^1.52.0",
 		"eslint": "^7.15.0",
 		"glob": "^7.1.6",
+		"js-beautify": "^1.13.5",
 		"less": "^4.1.0",
 		"less-plugin-clean-css": "^1.5.1",
 		"mocha": "^8.1.3",

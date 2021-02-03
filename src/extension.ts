@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-01 11:44:42
+ * @LastEditTime : 2021-02-03 16:50:17
  * @Description :
  */
 
@@ -9,7 +9,7 @@ import * as vscode from "vscode";
 import { TreeViewProvider } from "./treeView";
 import { createWebView } from "./webView";
 import { styleGenerated } from "./styleGenerated";
-
+import { rempx } from "./rempx";
 
 // const less = require("less");
 // const shell = require("shelljs");
@@ -63,6 +63,17 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand("ext.hopeui.breakpoint", () => {
             styleGenerated();
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
+            rempx("r2p");
+        })
+    );
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
+            rempx("p2r");
         })
     );
 
