@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-02-01 11:28:44
+ * @LastEditTime : 2021-02-03 10:40:49
  * @Description :
  */
 import {
@@ -12,8 +12,7 @@ import {
     commands,
     Uri,
 } from "vscode";
-const path = require("path");
-const fs = require("fs");
+import { join } from "path";
 
 let webviewPanel: WebviewPanel | undefined;
 
@@ -21,10 +20,12 @@ function getExtensionFileVscodeResource(
     context: ExtensionContext,
     relativePath: string
 ) {
-    const diskPath = Uri.file(path.join(context.extensionPath, relativePath));
-    return diskPath.with({
-        scheme: "vscode-resource"
-    }).toString();
+    const diskPath = Uri.file(join(context.extensionPath, relativePath));
+    return diskPath
+        .with({
+            scheme: "vscode-resource",
+        })
+        .toString();
 }
 
 export function createWebView(
@@ -33,13 +34,15 @@ export function createWebView(
     label: string,
     name: string
 ) {
-    let path = getExtensionFileVscodeResource(context, "src/docs/hopeui/iframe.html");
+    let path = getExtensionFileVscodeResource(
+        context,
+        "src/docs/hopeui/iframe.html"
+    );
     if (webviewPanel === undefined) {
         webviewPanel = window.createWebviewPanel("webView", name, viewColumn, {
             retainContextWhenHidden: true,
             enableScripts: true,
         });
-       
         webviewPanel.webview.html = getIframeHtml(path, label);
     } else {
         console.log(`${path}?id=${label}&viewMode=docs`);
@@ -47,10 +50,14 @@ export function createWebView(
         webviewPanel.webview.postMessage({
             // path: path,
             // label: label
-            params: `?id=${label}&viewMode=docs`
+            params: `?id=${label}&viewMode=docs`,
         });
         webviewPanel.reveal();
     }
+
+    webviewPanel.iconPath = Uri.file(
+        join(__filename, "..", "images", "UI.svg")
+    );
 
     webviewPanel.onDidDispose(() => {
         webviewPanel = undefined;

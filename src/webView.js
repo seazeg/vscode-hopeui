@@ -4,18 +4,19 @@ exports.getIframeHtml = exports.createWebView = void 0;
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-02-01 11:28:44
+ * @LastEditTime : 2021-02-03 10:40:49
  * @Description :
  */
 const vscode_1 = require("vscode");
-const path = require("path");
-const fs = require("fs");
+const path_1 = require("path");
 let webviewPanel;
 function getExtensionFileVscodeResource(context, relativePath) {
-    const diskPath = vscode_1.Uri.file(path.join(context.extensionPath, relativePath));
-    return diskPath.with({
-        scheme: "vscode-resource"
-    }).toString();
+    const diskPath = vscode_1.Uri.file(path_1.join(context.extensionPath, relativePath));
+    return diskPath
+        .with({
+        scheme: "vscode-resource",
+    })
+        .toString();
 }
 function createWebView(context, viewColumn, label, name) {
     let path = getExtensionFileVscodeResource(context, "src/docs/hopeui/iframe.html");
@@ -32,10 +33,11 @@ function createWebView(context, viewColumn, label, name) {
         webviewPanel.webview.postMessage({
             // path: path,
             // label: label
-            params: `?id=${label}&viewMode=docs`
+            params: `?id=${label}&viewMode=docs`,
         });
         webviewPanel.reveal();
     }
+    webviewPanel.iconPath = vscode_1.Uri.file(path_1.join(__filename, "..", "images", "UI.svg"));
     webviewPanel.onDidDispose(() => {
         webviewPanel = undefined;
     });
