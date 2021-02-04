@@ -39,6 +39,10 @@
 			{
 				"command": "ext.hopeui.px2rem",
 				"title": "[HopeUI] Px转换成Rem"
+			},
+			{
+				"command": "ext.hopeui.test",
+				"title": "Px转换成Rem"
 			}
 		],
 		"snippets": [{
@@ -78,7 +82,26 @@
 			"key": "ctrl+shift+p",
 			"mac": "cmd+shift+p",
 			"when": "editorTextFocus"
-		}]
+		}],
+		"menus": {
+			"editor/context": [
+				{
+                    "when": "editorHasSelection",
+                    "command": "ext.hopeui.color",
+                    "group": "tools"
+                },
+                {
+                    "when": "editorTextFocus",
+                    "command": "ext.hopeui.rem2px",
+                    "group": "tools"
+				},
+				{
+                    "when": "editorTextFocus",
+                    "command": "ext.hopeui.px2rem",
+                    "group": "tools"
+                }
+			]
+        }
 	},
 	"scripts": {
 		"lint": "eslint .",

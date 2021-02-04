@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 12:00:41
+ * @LastEditTime : 2021-02-04 15:41:29
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -81,7 +81,7 @@ function activate(context) {
         }
     }));
     tools_1.ToolsTreeView.initTreeViewItem();
-    context.subscriptions.push(vscode.commands.registerCommand("convert", (object) => {
+    context.subscriptions.push(vscode.commands.registerCommand("tools", (object) => {
         switch (object.type) {
             case "rem2px":
                 rempx_1.rempx(object.type);
@@ -95,9 +95,24 @@ function activate(context) {
             case "version":
                 vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
                 break;
+            case "hex2rgb":
             default:
                 break;
         }
+    }));
+    context.subscriptions.push(vscode.commands.registerTextEditorCommand("ext.hopeui.color", (textEditor, edit) => {
+        const doc = textEditor.document;
+        let selection = textEditor.selection;
+        //获取选中区域
+        if (selection.isEmpty) {
+            const start = new vscode.Position(0, 0);
+            const end = new vscode.Position(doc.lineCount - 1, doc.lineAt(doc.lineCount - 1).text.length);
+            selection = new vscode.Range(start, end);
+        }
+        textEditor.edit(builder => {
+            // builder.replace(selection, process.convertAll(text));
+        });
+        console.log(selection);
     }));
 }
 exports.activate = activate;

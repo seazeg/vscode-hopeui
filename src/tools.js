@@ -4,7 +4,7 @@ exports.ToolsTreeView = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-02-04 12:00:17
+ * @LastEditTime : 2021-02-04 15:42:01
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -23,7 +23,7 @@ class TreeItemNode extends vscode_1.TreeItem {
         this.collapsibleState = collapsibleState;
         this.command = {
             title: this.label,
-            command: "convert",
+            command: "tools",
             tooltip: this.label,
             arguments: [{ label: this.label, type: this.type }],
         };
@@ -41,7 +41,7 @@ class ToolsTreeView {
     getChildren(element) {
         return [
             { label: "获取HopeUI最新版", type: "version" },
-            { label: "HopeUI主题生成   [ctrl / cmd + shift + t]", type: "theme" },
+            // { label: "HopeUI主题生成   [ctrl / cmd + shift + t]", type: "theme" },
             { label: "Px转换成Rem   [ctrl / cmd + shift + p]", type: "px2rem" },
             { label: "Rem转换成Px   [ctrl / cmd + shift + r]", type: "rem2px" },
         ].map((item) => new TreeItemNode(item.label, item.type, vscode_1.TreeItemCollapsibleState.None));
