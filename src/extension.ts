@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 09:50:56
+ * @LastEditTime : 2021-02-04 09:54:23
  * @Description :
  */
 
@@ -65,16 +65,16 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-    context.subscriptions.push(
-        vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
-            rempx("r2p");
-        })
-    );
-    context.subscriptions.push(
-        vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
-            rempx("p2r");
-        })
-    );
+    // context.subscriptions.push(
+    //     vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
+    //         rempx("r2p");
+    //     })
+    // );
+    // context.subscriptions.push(
+    //     vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
+    //         rempx("p2r");
+    //     })
+    // );
 
     context.subscriptions.push(
         vscode.commands.registerCommand("ext.hopeui.open", () => {
