@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-03 16:50:17
+ * @LastEditTime : 2021-02-04 09:34:00
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -59,7 +59,8 @@ const LABEL_URI_MAP = new Map([
     ["工具函数 [Utils]", "常用函数-工具函数-utils--page"],
 ]);
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.breakpoint", () => {
+    treeView_1.TreeViewProvider.initTreeViewItem();
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.theme", () => {
         styleGenerated_1.styleGenerated();
     }));
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
@@ -71,7 +72,6 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
         vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
     }));
-    treeView_1.TreeViewProvider.initTreeViewItem();
     context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
         if (label != "基础控件" &&
             label != "复用组件" &&

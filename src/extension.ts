@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-03 16:50:17
+ * @LastEditTime : 2021-02-04 09:34:00
  * @Description :
  */
 
@@ -60,8 +60,10 @@ const LABEL_URI_MAP: any = new Map<string, string>([
 ]);
 
 export function activate(context: vscode.ExtensionContext) {
+    TreeViewProvider.initTreeViewItem();
+
     context.subscriptions.push(
-        vscode.commands.registerCommand("ext.hopeui.breakpoint", () => {
+        vscode.commands.registerCommand("ext.hopeui.theme", () => {
             styleGenerated();
         })
     );
@@ -88,7 +90,6 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-    TreeViewProvider.initTreeViewItem();
     context.subscriptions.push(
         vscode.commands.registerCommand("itemClick", (label) => {
             if (

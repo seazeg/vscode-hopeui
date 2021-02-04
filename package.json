@@ -17,7 +17,7 @@
 	],
 	"main": "src/extension.js",
 	"activationEvents": [
-		"onCommand:ext.hopeui.breakpoint",
+		"onCommand:ext.hopeui.theme",
 		"onCommand:ext.hopeui.open",
 		"onCommand:ext.hopeui.rem2px",
 		"onCommand:ext.hopeui.px2rem",
@@ -26,8 +26,8 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "ext.hopeui.breakpoint",
-				"title": "[HopeUI] 样式生成"
+				"command": "ext.hopeui.theme",
+				"title": "[HopeUI] 主题样式生成"
 			},
 			{
 				"command": "ext.hopeui.open",
