@@ -1,11 +1,11 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 10:01:00
+ * @LastEditTime : 2021-02-04 10:10:38
  * @Description  :
  */
 import { window, Position, Range } from "vscode";
-const beautify = require("js-beautify");
+// const beautify = require("js-beautify");
 const fs = require("fs");
 
 export function rempx(type: string) {
@@ -40,7 +40,7 @@ function converter(data: string, type: string): string {
     let ratio: number = 100;
     let res: string = "";
     if (source) {
-        source = beautify.css(source);
+        // source = beautify.css(source);
         let arr = source.split("\n");
         let len = arr.length;
         if (type == "px2rem") {
