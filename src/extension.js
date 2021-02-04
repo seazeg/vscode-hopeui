@@ -2,15 +2,16 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 09:54:23
+ * @LastEditTime : 2021-02-04 10:02:02
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deactivate = exports.activate = void 0;
+exports.activate = void 0;
 const vscode = require("vscode");
 const treeView_1 = require("./treeView");
 const webView_1 = require("./webView");
 const styleGenerated_1 = require("./styleGenerated");
+const rempx_1 = require("./rempx");
 const LABEL_URI_MAP = new Map([
     ["获取最新版", "概览-welcome-to-hopeui--welcome-to-hope-ui"],
     ["按钮 [Button]", "基础控件-按钮-button--通用"],
@@ -57,22 +58,6 @@ const LABEL_URI_MAP = new Map([
 ]);
 function activate(context) {
     treeView_1.TreeViewProvider.initTreeViewItem();
-    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.theme", () => {
-        styleGenerated_1.styleGenerated();
-    }));
-    // context.subscriptions.push(
-    //     vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
-    //         rempx("r2p");
-    //     })
-    // );
-    // context.subscriptions.push(
-    //     vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
-    //         rempx("p2r");
-    //     })
-    // );
-    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
-        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
-    }));
     context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
         if (label != "基础控件" &&
             label != "复用组件" &&
@@ -87,8 +72,18 @@ function activate(context) {
             }
         }
     }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.theme", () => {
+        styleGenerated_1.styleGenerated();
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
+        rempx_1.rempx("rem2px");
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
+        rempx_1.rempx("px2rem");
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
+        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
+    }));
 }
 exports.activate = activate;
-function deactivate() { }
-exports.deactivate = deactivate;
 //# sourceMappingURL=extension.js.map

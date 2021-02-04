@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 09:31:37
+ * @LastEditTime : 2021-02-04 10:01:00
  * @Description  :
  */
 import { window, Position, Range } from "vscode";
@@ -43,7 +43,7 @@ function converter(data: string, type: string): string {
         source = beautify.css(source);
         let arr = source.split("\n");
         let len = arr.length;
-        if (type == "p2r") {
+        if (type == "px2rem") {
             for (let i = 0; i < len; i++) {
                 let line = arr[i];
                 if (!line.includes("@media")) {
@@ -87,7 +87,7 @@ function converter(data: string, type: string): string {
                 }
                 res = res.replace(/0px/gi, "0");
             }
-        } else if (type == "r2p") {
+        } else if (type == "rem2px") {
             for (let i = 0; i < len; i++) {
                 let line = arr[i];
                 if (!line.includes("@media")) {

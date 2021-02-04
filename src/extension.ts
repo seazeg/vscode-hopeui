@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 09:54:23
+ * @LastEditTime : 2021-02-04 10:02:02
  * @Description :
  */
 
@@ -58,35 +58,6 @@ const LABEL_URI_MAP: any = new Map<string, string>([
 
 export function activate(context: vscode.ExtensionContext) {
     TreeViewProvider.initTreeViewItem();
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand("ext.hopeui.theme", () => {
-            styleGenerated();
-        })
-    );
-
-    // context.subscriptions.push(
-    //     vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
-    //         rempx("r2p");
-    //     })
-    // );
-    // context.subscriptions.push(
-    //     vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
-    //         rempx("p2r");
-    //     })
-    // );
-
-    context.subscriptions.push(
-        vscode.commands.registerCommand("ext.hopeui.open", () => {
-            vscode.commands.executeCommand(
-                "vscode.open",
-                vscode.Uri.parse(
-                    `https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`
-                )
-            );
-        })
-    );
-
     context.subscriptions.push(
         vscode.commands.registerCommand("itemClick", (label) => {
             if (
@@ -114,6 +85,32 @@ export function activate(context: vscode.ExtensionContext) {
             }
         })
     );
-}
 
-export function deactivate() {}
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.theme", () => {
+            styleGenerated();
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.rem2px", () => {
+            rempx("rem2px");
+        })
+    );
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.px2rem", () => {
+            rempx("px2rem");
+        })
+    );
+
+    context.subscriptions.push(
+        vscode.commands.registerCommand("ext.hopeui.open", () => {
+            vscode.commands.executeCommand(
+                "vscode.open",
+                vscode.Uri.parse(
+                    `https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`
+                )
+            );
+        })
+    );
+}
