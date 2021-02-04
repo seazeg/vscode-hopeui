@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-02-02 14:38:31
+ * @LastEditTime : 2021-02-04 11:59:37
  * @Description  :
  */
 import {
@@ -14,7 +14,6 @@ import {
 import { join } from "path";
 
 const ITEM_ICON_MAP = new Map<string, string>([
-    ["获取最新版", "version.svg"],
     ["按钮 [Button]", "controls.svg"],
     ["复选框 [Checkbox]", "controls.svg"],
     ["文本框 [Text]", "controls.svg"],
@@ -44,7 +43,6 @@ const ITEM_ICON_MAP = new Map<string, string>([
     ["基础控件", "controls.svg"],
     ["复用组件", "components.svg"],
     ["常用函数", "utils.svg"],
-    ["HopeUI", "version.svg"],
 ]);
 
 export class TreeItemNode extends TreeItem {
@@ -71,7 +69,7 @@ export class TreeItemNode extends TreeItem {
     }
 }
 
-export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
+export class DocsTreeView implements TreeDataProvider<TreeItemNode> {
     onDidChangeTreeData?:
         | import("vscode").Event<TreeItemNode | null | undefined>
         | undefined;
@@ -138,17 +136,9 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
                             TreeItemCollapsibleState.None as TreeItemCollapsibleState
                         )
                 );
-            } else if (element.label == "HopeUI") {
-                return ["获取最新版"].map(
-                    (item) =>
-                        new TreeItemNode(
-                            item as string,
-                            TreeItemCollapsibleState.None as TreeItemCollapsibleState
-                        )
-                );
             }
         } else {
-            return ["基础控件", "复用组件", "常用函数", "HopeUI"].map(
+            return ["基础控件", "复用组件", "常用函数"].map(
                 (item) =>
                     new TreeItemNode(
                         item as string,
@@ -159,7 +149,7 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
     }
 
     public static initTreeViewItem() {
-        const treeViewProvider = new TreeViewProvider();
+        const treeViewProvider = new DocsTreeView();
         window.registerTreeDataProvider("hopeUI.api", treeViewProvider);
     }
 }

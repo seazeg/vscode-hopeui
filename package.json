@@ -24,8 +24,7 @@
 		"onCommand:ext.hopeui.px2rem"
 	],
 	"contributes": {
-		"commands": [
-			{
+		"commands": [{
 				"command": "ext.hopeui.theme",
 				"title": "[HopeUI] 主题样式生成"
 			},
@@ -42,8 +41,7 @@
 				"title": "[HopeUI] Px转换成Rem"
 			}
 		],
-		"snippets": [
-			{
+		"snippets": [{
 				"language": "javascript",
 				"path": "src/snippets/javascript.json"
 			},
@@ -53,22 +51,34 @@
 			}
 		],
 		"viewsContainers": {
-			"activitybar": [
+			"activitybar": [{
+				"id": "hopeUI",
+				"title": "hopeUI",
+				"icon": "src/images/UI.svg"
+			}]
+		},
+		"views": {
+			"hopeUI": [{
+					"id": "hopeUI.api",
+					"name": "API文档"
+				},
 				{
-					"id": "hopeUI",
-					"title": "hopeUI",
-					"icon": "src/images/UI.svg"
+					"id": "hopeUI.tools",
+					"name": "常用工具"
 				}
 			]
 		},
-		"views": {
-			"hopeUI": [
-				{
-					"id": "hopeUI.api",
-					"name": "API文档"
-				}
-			]
-		}
+		"keybindings": [{
+			"command": "ext.hopeui.rem2px",
+			"key": "ctrl+shift+r",
+			"mac": "cmd+shift+r",
+			"when": "editorTextFocus"
+		}, {
+			"command": "ext.hopeui.px2rem",
+			"key": "ctrl+shift+p",
+			"mac": "cmd+shift+p",
+			"when": "editorTextFocus"
+		}]
 	},
 	"scripts": {
 		"lint": "eslint .",

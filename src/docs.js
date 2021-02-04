@@ -1,16 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TreeViewProvider = exports.TreeItemNode = void 0;
+exports.DocsTreeView = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-02-02 14:38:31
+ * @LastEditTime : 2021-02-04 11:59:37
  * @Description  :
  */
 const vscode_1 = require("vscode");
 const path_1 = require("path");
 const ITEM_ICON_MAP = new Map([
-    ["获取最新版", "version.svg"],
     ["按钮 [Button]", "controls.svg"],
     ["复选框 [Checkbox]", "controls.svg"],
     ["文本框 [Text]", "controls.svg"],
@@ -40,7 +39,6 @@ const ITEM_ICON_MAP = new Map([
     ["基础控件", "controls.svg"],
     ["复用组件", "components.svg"],
     ["常用函数", "utils.svg"],
-    ["HopeUI", "version.svg"],
 ]);
 class TreeItemNode extends vscode_1.TreeItem {
     constructor(label, collapsibleState) {
@@ -60,7 +58,7 @@ class TreeItemNode extends vscode_1.TreeItem {
     }
 }
 exports.TreeItemNode = TreeItemNode;
-class TreeViewProvider {
+class DocsTreeView {
     getTreeItem(element) {
         return element;
     }
@@ -105,18 +103,15 @@ class TreeViewProvider {
                     "工具函数 [Utils]",
                 ].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
             }
-            else if (element.label == "HopeUI") {
-                return ["获取最新版"].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.None));
-            }
         }
         else {
-            return ["基础控件", "复用组件", "常用函数", "HopeUI"].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.Expanded));
+            return ["基础控件", "复用组件", "常用函数"].map((item) => new TreeItemNode(item, vscode_1.TreeItemCollapsibleState.Expanded));
         }
     }
     static initTreeViewItem() {
-        const treeViewProvider = new TreeViewProvider();
+        const treeViewProvider = new DocsTreeView();
         vscode_1.window.registerTreeDataProvider("hopeUI.api", treeViewProvider);
     }
 }
-exports.TreeViewProvider = TreeViewProvider;
-//# sourceMappingURL=treeView.js.map
+exports.DocsTreeView = DocsTreeView;
+//# sourceMappingURL=docs.js.map

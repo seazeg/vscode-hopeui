@@ -1,12 +1,13 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 10:02:02
+ * @LastEditTime : 2021-02-04 12:00:41
  * @Description :
  */
 
 import * as vscode from "vscode";
-import { TreeViewProvider } from "./treeView";
+import { DocsTreeView } from "./docs";
+import { ToolsTreeView } from "./tools";
 import { createWebView } from "./webView";
 import { styleGenerated } from "./styleGenerated";
 import { rempx } from "./rempx";
@@ -57,35 +58,6 @@ const LABEL_URI_MAP: any = new Map<string, string>([
 ]);
 
 export function activate(context: vscode.ExtensionContext) {
-    TreeViewProvider.initTreeViewItem();
-    context.subscriptions.push(
-        vscode.commands.registerCommand("itemClick", (label) => {
-            if (
-                label != "基础控件" &&
-                label != "复用组件" &&
-                label != "常用函数" &&
-                label != "HopeUI"
-            ) {
-                if (label == "获取最新版") {
-                    vscode.commands.executeCommand(
-                        "vscode.open",
-                        vscode.Uri.parse(
-                            `https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`
-                        )
-                    );
-                } else {
-                    const webView = createWebView(
-                        context,
-                        vscode.ViewColumn.Active,
-                        LABEL_URI_MAP.get(label),
-                        label
-                    );
-                    context.subscriptions.push(webView);
-                }
-            }
-        })
-    );
-
     context.subscriptions.push(
         vscode.commands.registerCommand("ext.hopeui.theme", () => {
             styleGenerated();
@@ -111,6 +83,53 @@ export function activate(context: vscode.ExtensionContext) {
                     `https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`
                 )
             );
+        })
+    );
+
+    DocsTreeView.initTreeViewItem();
+    context.subscriptions.push(
+        vscode.commands.registerCommand("itemClick", (label) => {
+            if (
+                label != "基础控件" &&
+                label != "复用组件" &&
+                label != "常用函数" &&
+                label != "HopeUI"
+            ) {
+                const webView = createWebView(
+                    context,
+                    vscode.ViewColumn.Active,
+                    LABEL_URI_MAP.get(label),
+                    label
+                );
+                context.subscriptions.push(webView);
+            }
+        })
+    );
+
+    ToolsTreeView.initTreeViewItem();
+    context.subscriptions.push(
+        vscode.commands.registerCommand("convert", (object) => {
+            switch (object.type) {
+                case "rem2px":
+                    rempx(object.type);
+                    break;
+                case "px2rem":
+                    rempx(object.type);
+                    break;
+                case "theme":
+                    styleGenerated();
+                    break;
+                case "version":
+                    vscode.commands.executeCommand(
+                        "vscode.open",
+                        vscode.Uri.parse(
+                            `https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`
+                        )
+                    );
+                    break;
+                default:
+                    break;
+            }
         })
     );
 }

@@ -2,13 +2,14 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 10:02:02
+ * @LastEditTime : 2021-02-04 12:00:41
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const vscode = require("vscode");
-const treeView_1 = require("./treeView");
+const docs_1 = require("./docs");
+const tools_1 = require("./tools");
 const webView_1 = require("./webView");
 const styleGenerated_1 = require("./styleGenerated");
 const rempx_1 = require("./rempx");
@@ -57,21 +58,6 @@ const LABEL_URI_MAP = new Map([
     ["工具函数 [Utils]", "常用函数-工具函数-utils--page"],
 ]);
 function activate(context) {
-    treeView_1.TreeViewProvider.initTreeViewItem();
-    context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
-        if (label != "基础控件" &&
-            label != "复用组件" &&
-            label != "常用函数" &&
-            label != "HopeUI") {
-            if (label == "获取最新版") {
-                vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
-            }
-            else {
-                const webView = webView_1.createWebView(context, vscode.ViewColumn.Active, LABEL_URI_MAP.get(label), label);
-                context.subscriptions.push(webView);
-            }
-        }
-    }));
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.theme", () => {
         styleGenerated_1.styleGenerated();
     }));
@@ -83,6 +69,35 @@ function activate(context) {
     }));
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
         vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
+    }));
+    docs_1.DocsTreeView.initTreeViewItem();
+    context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {
+        if (label != "基础控件" &&
+            label != "复用组件" &&
+            label != "常用函数" &&
+            label != "HopeUI") {
+            const webView = webView_1.createWebView(context, vscode.ViewColumn.Active, LABEL_URI_MAP.get(label), label);
+            context.subscriptions.push(webView);
+        }
+    }));
+    tools_1.ToolsTreeView.initTreeViewItem();
+    context.subscriptions.push(vscode.commands.registerCommand("convert", (object) => {
+        switch (object.type) {
+            case "rem2px":
+                rempx_1.rempx(object.type);
+                break;
+            case "px2rem":
+                rempx_1.rempx(object.type);
+                break;
+            case "theme":
+                styleGenerated_1.styleGenerated();
+                break;
+            case "version":
+                vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
+                break;
+            default:
+                break;
+        }
     }));
 }
 exports.activate = activate;
