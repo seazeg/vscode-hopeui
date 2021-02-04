@@ -40,10 +40,6 @@
 			{
 				"command": "ext.hopeui.px2rem",
 				"title": "[HopeUI] Px转换成Rem"
-			},
-			{
-				"command": "ext.hopeui.test",
-				"title": "Px转换成Rem"
 			}
 		],
 		"snippets": [
@@ -82,13 +78,13 @@
 				"command": "ext.hopeui.rem2px",
 				"key": "ctrl+shift+r",
 				"mac": "cmd+shift+r",
-				"when": "editorTextFocus"
+				"when": "resourceLangId == less || resourceLangId == css || resourceLangId == sass"
 			},
 			{
 				"command": "ext.hopeui.px2rem",
 				"key": "ctrl+shift+p",
 				"mac": "cmd+shift+p",
-				"when": "editorTextFocus"
+				"when": "resourceLangId == less || resourceLangId == css || resourceLangId == sass"
 			}
 		],
 		"menus": {
@@ -96,17 +92,17 @@
 				{
 					"when": "editorHasSelection",
 					"command": "ext.hopeui.color",
-					"group": "tools"
+					"group": "7_modification"
 				},
 				{
-					"when": "editorTextFocus",
+					"when": "resourceLangId == less || resourceLangId == css || resourceLangId == sass",
 					"command": "ext.hopeui.rem2px",
-					"group": "tools"
+					"group": "7_modification"
 				},
 				{
-					"when": "editorTextFocus",
+					"when": "resourceLangId == less || resourceLangId == css || resourceLangId == sass",
 					"command": "ext.hopeui.px2rem",
-					"group": "tools"
+					"group": "7_modification"
 				}
 			]
 		}
