@@ -13,11 +13,11 @@ exports.rempx = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 10:10:38
+ * @LastEditTime : 2021-02-04 10:14:02
  * @Description  :
  */
 const vscode_1 = require("vscode");
-// const beautify = require("js-beautify");
+const beautify = require("js-beautify");
 const fs = require("fs");
 function rempx(type) {
     if (!vscode_1.window.activeTextEditor)
@@ -49,7 +49,7 @@ function converter(data, type) {
     let ratio = 100;
     let res = "";
     if (source) {
-        // source = beautify.css(source);
+        source = beautify.css(source);
         let arr = source.split("\n");
         let len = arr.length;
         if (type == "px2rem") {
