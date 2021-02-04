@@ -2,7 +2,7 @@
 	"name": "quick-hopeui",
 	"displayName": "Quick HopeUI",
 	"description": "hopeUI快速生成插件",
-	"version": "0.0.33",
+	"version": "0.0.34",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -24,7 +24,8 @@
 		"onCommand:ext.hopeui.px2rem"
 	],
 	"contributes": {
-		"commands": [{
+		"commands": [
+			{
 				"command": "ext.hopeui.theme",
 				"title": "[HopeUI] 主题样式生成"
 			},
@@ -45,7 +46,8 @@
 				"title": "Px转换成Rem"
 			}
 		],
-		"snippets": [{
+		"snippets": [
+			{
 				"language": "javascript",
 				"path": "src/snippets/javascript.json"
 			},
@@ -55,14 +57,17 @@
 			}
 		],
 		"viewsContainers": {
-			"activitybar": [{
-				"id": "hopeUI",
-				"title": "hopeUI",
-				"icon": "src/images/UI.svg"
-			}]
+			"activitybar": [
+				{
+					"id": "hopeUI",
+					"title": "hopeUI",
+					"icon": "src/images/UI.svg"
+				}
+			]
 		},
 		"views": {
-			"hopeUI": [{
+			"hopeUI": [
+				{
 					"id": "hopeUI.api",
 					"name": "API文档"
 				},
@@ -72,36 +77,39 @@
 				}
 			]
 		},
-		"keybindings": [{
-			"command": "ext.hopeui.rem2px",
-			"key": "ctrl+shift+r",
-			"mac": "cmd+shift+r",
-			"when": "editorTextFocus"
-		}, {
-			"command": "ext.hopeui.px2rem",
-			"key": "ctrl+shift+p",
-			"mac": "cmd+shift+p",
-			"when": "editorTextFocus"
-		}],
+		"keybindings": [
+			{
+				"command": "ext.hopeui.rem2px",
+				"key": "ctrl+shift+r",
+				"mac": "cmd+shift+r",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "ext.hopeui.px2rem",
+				"key": "ctrl+shift+p",
+				"mac": "cmd+shift+p",
+				"when": "editorTextFocus"
+			}
+		],
 		"menus": {
 			"editor/context": [
 				{
-                    "when": "editorHasSelection",
-                    "command": "ext.hopeui.color",
-                    "group": "tools"
-                },
-                {
-                    "when": "editorTextFocus",
-                    "command": "ext.hopeui.rem2px",
-                    "group": "tools"
+					"when": "editorHasSelection",
+					"command": "ext.hopeui.color",
+					"group": "tools"
 				},
 				{
-                    "when": "editorTextFocus",
-                    "command": "ext.hopeui.px2rem",
-                    "group": "tools"
-                }
+					"when": "editorTextFocus",
+					"command": "ext.hopeui.rem2px",
+					"group": "tools"
+				},
+				{
+					"when": "editorTextFocus",
+					"command": "ext.hopeui.px2rem",
+					"group": "tools"
+				}
 			]
-        }
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
