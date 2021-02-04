@@ -17,11 +17,11 @@
 	],
 	"main": "src/extension.js",
 	"activationEvents": [
+		"onView:hopeUI.api",
 		"onCommand:ext.hopeui.theme",
 		"onCommand:ext.hopeui.open",
 		"onCommand:ext.hopeui.rem2px",
-		"onCommand:ext.hopeui.px2rem",
-		"onView:hopeUI.api"
+		"onCommand:ext.hopeui.px2rem"
 	],
 	"contributes": {
 		"commands": [

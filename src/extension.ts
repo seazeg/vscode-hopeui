@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 09:34:00
+ * @LastEditTime : 2021-02-04 09:50:56
  * @Description :
  */
 
@@ -10,9 +10,6 @@ import { TreeViewProvider } from "./treeView";
 import { createWebView } from "./webView";
 import { styleGenerated } from "./styleGenerated";
 import { rempx } from "./rempx";
-
-// const less = require("less");
-// const shell = require("shelljs");
 
 const LABEL_URI_MAP: any = new Map<string, string>([
     ["获取最新版", "概览-welcome-to-hopeui--welcome-to-hope-ui"],

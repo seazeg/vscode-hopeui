@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 09:34:00
+ * @LastEditTime : 2021-02-04 09:50:56
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -12,8 +12,6 @@ const treeView_1 = require("./treeView");
 const webView_1 = require("./webView");
 const styleGenerated_1 = require("./styleGenerated");
 const rempx_1 = require("./rempx");
-// const less = require("less");
-// const shell = require("shelljs");
 const LABEL_URI_MAP = new Map([
     ["获取最新版", "概览-welcome-to-hopeui--welcome-to-hope-ui"],
     ["按钮 [Button]", "基础控件-按钮-button--通用"],
