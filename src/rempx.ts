@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 15:11:21
+ * @LastEditTime : 2021-02-04 15:51:50
  * @Description  :
  */
 import { window, Position, Range } from "vscode";
@@ -10,20 +10,25 @@ const fs = require("fs");
 
 export function rempx(type: string) {
     if (!window.activeTextEditor) return;
-    getFileContents(window.activeTextEditor.document.fileName, type).then(
-        function (data) {
-            if (!window.activeTextEditor) return;
-            window.activeTextEditor.edit((editBuilder: any) => {
-                // 从开始到结束，全量替换
+    if (window.activeTextEditor.document.languageId.includes("css")) {
+        getFileContents(window.activeTextEditor.document.fileName, type).then(
+            function (data) {
                 if (!window.activeTextEditor) return;
-                const end = new Position(
-                    window.activeTextEditor.document.lineCount + 1,
-                    0
-                );
-                editBuilder.replace(new Range(new Position(0, 0), end), data);
-            });
-        }
-    );
+                window.activeTextEditor.edit((editBuilder: any) => {
+                    // 从开始到结束，全量替换
+                    if (!window.activeTextEditor) return;
+                    const end = new Position(
+                        window.activeTextEditor.document.lineCount + 1,
+                        0
+                    );
+                    editBuilder.replace(
+                        new Range(new Position(0, 0), end),
+                        data
+                    );
+                });
+            }
+        );
+    }
 }
 
 function getFileContents(filepath: string, type: string) {

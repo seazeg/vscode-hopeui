@@ -13,7 +13,7 @@ exports.rempx = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 15:11:21
+ * @LastEditTime : 2021-02-04 15:51:50
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -22,17 +22,19 @@ const fs = require("fs");
 function rempx(type) {
     if (!vscode_1.window.activeTextEditor)
         return;
-    getFileContents(vscode_1.window.activeTextEditor.document.fileName, type).then(function (data) {
-        if (!vscode_1.window.activeTextEditor)
-            return;
-        vscode_1.window.activeTextEditor.edit((editBuilder) => {
-            // 从开始到结束，全量替换
+    if (vscode_1.window.activeTextEditor.document.languageId.includes("css")) {
+        getFileContents(vscode_1.window.activeTextEditor.document.fileName, type).then(function (data) {
             if (!vscode_1.window.activeTextEditor)
                 return;
-            const end = new vscode_1.Position(vscode_1.window.activeTextEditor.document.lineCount + 1, 0);
-            editBuilder.replace(new vscode_1.Range(new vscode_1.Position(0, 0), end), data);
+            vscode_1.window.activeTextEditor.edit((editBuilder) => {
+                // 从开始到结束，全量替换
+                if (!vscode_1.window.activeTextEditor)
+                    return;
+                const end = new vscode_1.Position(vscode_1.window.activeTextEditor.document.lineCount + 1, 0);
+                editBuilder.replace(new vscode_1.Range(new vscode_1.Position(0, 0), end), data);
+            });
         });
-    });
+    }
 }
 exports.rempx = rempx;
 function getFileContents(filepath, type) {
