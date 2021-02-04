@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 15:51:50
+ * @LastEditTime : 2021-02-04 16:30:10
  * @Description  :
  */
 import { window, Position, Range } from "vscode";
@@ -10,7 +10,7 @@ const fs = require("fs");
 
 export function rempx(type: string) {
     if (!window.activeTextEditor) return;
-    if (window.activeTextEditor.document.languageId.includes("css")) {
+    if (window.activeTextEditor.document.languageId.includes("ss")) {
         getFileContents(window.activeTextEditor.document.fileName, type).then(
             function (data) {
                 if (!window.activeTextEditor) return;

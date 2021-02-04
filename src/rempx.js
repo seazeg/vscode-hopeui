@@ -13,7 +13,7 @@ exports.rempx = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2021-02-03 15:19:29
- * @LastEditTime : 2021-02-04 15:51:50
+ * @LastEditTime : 2021-02-04 16:30:10
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -22,7 +22,7 @@ const fs = require("fs");
 function rempx(type) {
     if (!vscode_1.window.activeTextEditor)
         return;
-    if (vscode_1.window.activeTextEditor.document.languageId.includes("css")) {
+    if (vscode_1.window.activeTextEditor.document.languageId.includes("ss")) {
         getFileContents(vscode_1.window.activeTextEditor.document.fileName, type).then(function (data) {
             if (!vscode_1.window.activeTextEditor)
                 return;
