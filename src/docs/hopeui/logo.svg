@@ -1,0 +1,106 @@
+<svg data-v-1e121de1="" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="100%" height="100%" viewBox="0 0 240.000000 80.000000" preserveAspectRatio="xMidYMid meet"
+    color-interpolation-filters="sRGB" class="el-tooltip" style="margin: auto;">
+    <g data-v-1e121de1="" fill="#fff" class="icon-text-wrapper icon-svg-group iconsvg" transform="translate(30,20)">
+        <!-- <g class="iconsvg-imagesvg" transform="translate(0,0)">
+            <rect fill="#fff" fill-opacity="0" stroke-width="2" x="0" y="0" width="60" height="54.58957887223352"
+                class="image-rect"></rect> <svg filter="url(#colors6877853308)" x="0" y="-8" width="60"
+                height="54.58957887223352" filtersec="colorsf4640945283" class="image-svg-svg primary"><svg
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.06 76.48">
+                    <g>
+                        <g fill="#f8b500">
+                            <path
+                                d="M56 70.84c-3.43.62-14.93 1-18.75-10.41S40 41.68 44.87 41 57 42.72 57.72 47.58s-3.82 9 .69 8.68S71.95 52.79 69.52 42 53.9 21.89 39 27.45s-20.13 17-18.4 26.73S28.91 72.92 38.28 75s14.92 2.44 21.52-2.08c2.78-1.74 0-2.78-3.82-2.08M11.55 66c-2.43 1.39-4.17 5.9-2.43 8s5.2-.35 8.33-3.47 3.12-7.29 0-6.6a29 29 0 0 0-5.9 2.07M4.61 50c-3.47.35-6.25-3.12-3.47-5.55s5.9-1.74 9-1 7.29 1.73 7.64 3.47-2.08 3.47-4.86 3.47S4.61 50 4.61 50M11.89 28.49c-3.47-2.43-7.29-5.9-5.21-7.64s3.82-1.39 6.94 1.39a63.55 63.55 0 0 1 6.94 7.29c1.74 2.08 0 5.55-3.12 3.12s-5.55-4.17-5.55-4.17M29.25 8.36C27.86 5.23 26.82.37 32 0s6.62 3.15 7 7 1.39 6.94.7 10.07-5.55 5.21-7.64.35a43.87 43.87 0 0 1-2.78-9M61.53 11.13c1.74-4.17 5.56-6.25 8-3.82s2.78 5.9.35 9.37a57.42 57.42 0 0 1-6.6 8c-2.08 2.08-8.68.69-5.9-4.51a78.12 78.12 0 0 0 4.16-9M77.85 28.14c3.47-2.08 8.33 1.74 5.21 4.86s-7.64 3.82-9.72 4.17-5.9-2.78-1.39-5.9 5.9-3.12 5.9-3.12">
+                            </path>
+                        </g>
+                    </g>
+                </svg></svg>
+            <defs>
+                <filter id="colors6877853308">
+                    <feColorMatrix type="matrix"
+                        values="0 0 0 0 0.17578125  0 0 0 0 0.703125  0 0 0 0 0.9296875  0 0 0 1 0"
+                        class="icon-fecolormatrix"></feColorMatrix>
+                </filter>
+                <filter id="colorsf4640945283">
+                    <feColorMatrix type="matrix"
+                        values="0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 1 0"
+                        class="icon-fecolormatrix"></feColorMatrix>
+                </filter>
+                <filter id="colorsb7182699969">
+                    <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
+                        class="icon-fecolormatrix"></feColorMatrix>
+                </filter>
+            </defs>
+        </g> -->
+        <g class="iconsvg-imagesvg" transform="translate(0,0)">
+            <rect fill="#2DB4EE" fill-opacity="0" stroke-width="2" x="0" y="0" width="60" height="68.29400131839174"
+                class="image-rect"></rect> <svg x="0" y="-12" width="60" height="68.29400131839174"
+                filtersec="colorsb4591345970" class="image-svg-svg primary"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 151.7 172.67">
+                    <g>
+                        <g>
+                            <path fill="#B4A7D6"
+                                d="M151.7 48.8l-14.3 8.26v33.03l-42.91 24.78V81.83l-14.3 8.26v82.58l14.3-8.26v-33.03l42.91-24.77v33.03l14.3-8.26V48.8z">
+                            </path>
+                            <path fill="#2DB4EE"
+                                d="M18.64 33.03L4.33 41.29l71.52 41.29 14.3-8.26-28.6-16.52 42.91-24.77 28.6 16.52 14.31-8.26L75.85 0l-14.3 8.26 28.6 16.51-42.91 24.78-28.6-16.52z">
+                            </path>
+                            <path fill="#EA9999"
+                                d="M0 131.38l14.3 8.26v-33.03l42.91 24.77v33.03l14.3 8.26V90.09l-14.3-8.26v33.04L14.3 90.09V57.06L0 48.8v82.58z">
+                            </path>
+                        </g>
+                    </g>
+                </svg></svg>
+            <!---->
+        </g>
+        <g transform="translate(67.00054931640625,3.6952896118164062)"
+            mask="url(#fd446e38-6808-4e13-8772-d723e8527efc)">
+            <g fill-rule="" class="tp-name iconsvg-namesvg" transform="translate(0,0)" fill="#2DB4EE">
+                <g>
+                    <path
+                        d="M8.55-31.50L8.55-18L20.25-18L20.25-13.50L8.55-13.50L8.55 0L3.15 0L3.15-31.50L8.55-31.50ZM21.60-31.50L27-31.50L27 0L21.60 0L21.60-31.50ZM49.05-31.50L53.55-27L53.55-4.50L49.05 0L48.15 0L48.15-27L35.10-27L35.10-4.50L46.80-4.50L46.80 0L34.20 0L29.70-4.50L29.70-27L34.20-31.50L49.05-31.50ZM75.60-31.50L80.10-27L80.10-18L74.70-13.50L74.70-27L61.65-27L61.65-18L73.35-18L73.35-13.50L61.65-13.50L61.65 0L56.25 0L56.25-31.50L75.60-31.50ZM104.22-27L88.20-27L88.20-18L102.15-18L102.15-13.50L88.20-13.50L88.20-4.50L104.22-4.50L104.22 0L82.80 0L82.80-31.50L104.22-31.50L104.22-27Z"
+                        transform="translate(-3.15, 31.5)"></path>
+                </g>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+            </g>
+            <g fill-rule="" hollow-target="t-name" class="tp-slogan iconsvg-slogansvg" fill="#2DB4EE"
+                transform="translate(0,38.5)">
+                <rect x="0" height="1" y="3.8600001335144043" width="42.5649995803833"></rect>
+                <rect height="1" y="3.8600001335144043" width="42.5649995803833" x="58.50500011444092"></rect>
+                <g transform="translate(45.5649995803833,0)">
+                    <path
+                        d="M6.56-3.19L6.56-8.58L7.73-8.58L7.73-3.05Q7.59 0.05 4.22 0.14L4.22 0.14Q1.08 0.05 0.94-2.86L0.94-2.86L0.94-8.58L2.11-8.58L2.11-3.19Q2.16-0.84 4.27-0.80L4.27-0.80Q6.56-0.84 6.56-3.19L6.56-3.19ZM9.70-8.58L10.88-8.58L10.88 0L9.70 0L9.70-8.58Z"
+                        transform="translate(-0.9375, 8.578125)"></path>
+                </g>
+            </g>
+
+        </g>
+    </g>
+    <mask id="fd446e38-6808-4e13-8772-d723e8527efc">
+        <g fill-rule="" class="tp-name iconsvg-namesvg" transform="translate(0,0)" fill="white">
+            <g>
+                <path
+                    d="M8.55-31.50L8.55-18L20.25-18L20.25-13.50L8.55-13.50L8.55 0L3.15 0L3.15-31.50L8.55-31.50ZM21.60-31.50L27-31.50L27 0L21.60 0L21.60-31.50ZM49.05-31.50L53.55-27L53.55-4.50L49.05 0L48.15 0L48.15-27L35.10-27L35.10-4.50L46.80-4.50L46.80 0L34.20 0L29.70-4.50L29.70-27L34.20-31.50L49.05-31.50ZM75.60-31.50L80.10-27L80.10-18L74.70-13.50L74.70-27L61.65-27L61.65-18L73.35-18L73.35-13.50L61.65-13.50L61.65 0L56.25 0L56.25-31.50L75.60-31.50ZM104.22-27L88.20-27L88.20-18L102.15-18L102.15-13.50L88.20-13.50L88.20-4.50L104.22-4.50L104.22 0L82.80 0L82.80-31.50L104.22-31.50L104.22-27Z"
+                    transform="translate(-3.15, 31.5)"></path>
+            </g>
+        </g>
+        <rect fill="#000" x="0" y="0" width="105.06999969482422" height="12.720000267028809"
+            transform="translate(-2, 36.5)"></rect>
+        <g fill-rule="" hollow-target="t-name" class="tp-slogan iconsvg-slogansvg" transform="translate(0,38.5)"
+            fill="#fff">
+            <rect x="0" height="1" y="3.8600001335144043" width="42.5649995803833"></rect>
+            <rect height="1" y="3.8600001335144043" width="42.5649995803833" x="58.50500011444092"></rect>
+            <g transform="translate(45.5649995803833,0)">
+                <path
+                    d="M6.56-3.19L6.56-8.58L7.73-8.58L7.73-3.05Q7.59 0.05 4.22 0.14L4.22 0.14Q1.08 0.05 0.94-2.86L0.94-2.86L0.94-8.58L2.11-8.58L2.11-3.19Q2.16-0.84 4.27-0.80L4.27-0.80Q6.56-0.84 6.56-3.19L6.56-3.19ZM9.70-8.58L10.88-8.58L10.88 0L9.70 0L9.70-8.58Z"
+                    transform="translate(-0.9375, 8.578125)"></path>
+            </g>
+        </g>
+    </mask>
+</svg>
