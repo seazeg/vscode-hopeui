@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-02-03 10:40:49
+ * @LastEditTime : 2021-03-09 14:46:52
  * @Description :
  */
 import {
@@ -56,7 +56,7 @@ export function createWebView(
     }
 
     webviewPanel.iconPath = Uri.file(
-        join(__filename, "..", "images", "UI.svg")
+        join(__filename, "..", "images", "icon.png")
     );
 
     webviewPanel.onDidDispose(() => {

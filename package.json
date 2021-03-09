@@ -90,11 +90,6 @@
 		"menus": {
 			"editor/context": [
 				{
-					"when": "editorHasSelection",
-					"command": "ext.hopeui.color",
-					"group": "7_modification"
-				},
-				{
 					"when": "resourceLangId == less || resourceLangId == css || resourceLangId == sass",
 					"command": "ext.hopeui.rem2px",
 					"group": "7_modification"

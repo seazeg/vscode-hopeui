@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-02-04 16:06:37
+ * @LastEditTime : 2021-03-09 14:46:18
  * @Description :
  */
 
@@ -135,29 +135,4 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
     
-    context.subscriptions.push(
-        vscode.commands.registerTextEditorCommand(
-            "ext.hopeui.color",
-            (textEditor, edit) => {
-                const doc = textEditor.document;
-                let selection: vscode.Selection | vscode.Range =
-                    textEditor.selection;
-                //获取选中区域
-                if (selection.isEmpty) {
-                    const start = new vscode.Position(0, 0);
-                    const end = new vscode.Position(
-                        doc.lineCount - 1,
-                        doc.lineAt(doc.lineCount - 1).text.length
-                    );
-                    selection = new vscode.Range(start, end);
-                }
-
-                textEditor.edit(builder => {
-                    // builder.replace(selection, process.convertAll(text));
-                });
-
-                console.log(selection);
-            }
-        )
-    );
 }

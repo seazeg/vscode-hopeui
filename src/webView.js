@@ -4,7 +4,7 @@ exports.getIframeHtml = exports.createWebView = void 0;
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-02-03 10:40:49
+ * @LastEditTime : 2021-03-09 14:46:52
  * @Description :
  */
 const vscode_1 = require("vscode");
@@ -37,7 +37,7 @@ function createWebView(context, viewColumn, label, name) {
         });
         webviewPanel.reveal();
     }
-    webviewPanel.iconPath = vscode_1.Uri.file(path_1.join(__filename, "..", "images", "UI.svg"));
+    webviewPanel.iconPath = vscode_1.Uri.file(path_1.join(__filename, "..", "images", "icon.png"));
     webviewPanel.onDidDispose(() => {
         webviewPanel = undefined;
     });
