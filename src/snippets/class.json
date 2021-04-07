@@ -1,0 +1,79 @@
+{
+    "hopeui-row": {
+        "prefix": "hopeui-row",
+        "body": [
+            "hopeui-row"
+        ],
+        "description": "栅栏行容器"
+    },
+    "hopeui-col-*-*": {
+        "prefix": "hopeui-col-*-*",
+        "body": [
+            "hopeui-col-${1:xl|md|xs}-${2:1-12|1-8}"
+        ],
+        "description": "栅栏列容器"
+    },
+    "hopeui-col-space*": {
+        "prefix": "hopeui-col-space*",
+        "body": [
+            "hopeui-col-space${1:1}"
+        ],
+        "description": "栅栏间隔"
+    },
+    "hopeui-col-offest*": {
+        "prefix": "hopeui-col-offest*",
+        "body": [
+            "hopeui-col-offest${1:1}"
+        ],
+        "description": "栅栏左偏移"
+    },
+    "hopeui-col-center": {
+        "prefix": "hopeui-col-center",
+        "body": [
+            "hopeui-col-center"
+        ],
+        "description": "栅栏居中"
+    },
+    "hopeui-col-*-hide": {
+        "prefix": "hopeui-col-*-hide",
+        "body": [
+            "hopeui-col-${1:xl|md|xs}-hide"
+        ],
+        "description": "栅栏隐藏"
+    },
+    "hopeui-col-*-show": {
+        "prefix": "hopeui-col-*-show",
+        "body": [
+            "hopeui-col-${1:xl|md|xs}-show"
+        ],
+        "description": "栅栏显示"
+    },
+    "hopeui-col-*-inlineshow": {
+        "prefix": "hopeui-col-*-inlineshow",
+        "body": [
+            "hopeui-col-${1:xl|md|xs}-inlineshow"
+        ],
+        "description": "栅栏内敛块显示"
+    },
+    "hopeui-hide": {
+        "prefix": "hopeui-hide",
+        "body": [
+            "hopeui-hide"
+        ],
+        "description": "强制隐藏"
+    },
+    "hopeui-show": {
+        "prefix": "hopeui-show",
+        "body": [
+            "hopeui-show"
+        ],
+        "description": "强制显示"
+    },
+    "hopeui-inlineshow": {
+        "prefix": "hopeui-inlineshow",
+        "body": [
+            "hopeui-show"
+        ],
+        "description": "强制内敛块显示"
+    }
+}

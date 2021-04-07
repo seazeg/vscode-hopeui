@@ -50,6 +50,10 @@
 			{
 				"language": "html",
 				"path": "src/snippets/html.json"
+			},
+			{
+				"language": "html",
+				"path": "src/snippets/class.json"
 			}
 		],
 		"viewsContainers": {
