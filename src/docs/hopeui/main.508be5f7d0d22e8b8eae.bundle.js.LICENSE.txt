@@ -6,7 +6,7 @@
    */
 
 /*!
- * HopeUI version 1.0.1
+ * HopeUI version 1.0.2
  * Author Evan.G
  * For more information, please visit https://github.com/seazeg/hopeUI
  * HopeUI is available under the terms of the MIT license.
