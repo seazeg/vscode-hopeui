@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-03-09 14:46:52
+ * @LastEditTime : 2021-05-14 11:51:32
  * @Description :
  */
 import {
@@ -74,6 +74,7 @@ export function createWebView(
 }
 
 export function getIframeHtml(path: string, label: string) {
+    console.log(`${path}?id=${label}&viewMode=docs`);
     return `
     <!DOCTYPE html>
     <html lang="en">
