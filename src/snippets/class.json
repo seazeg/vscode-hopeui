@@ -9,7 +9,7 @@
     "hopeui-col-*-*": {
         "prefix": "hopeui-col-*-*",
         "body": [
-            "hopeui-col-${1:xl|md|xs}-${2:1-12|1-8}"
+            "hopeui-col-${1:xl|md|sm|xs}-${2:1-12}"
         ],
         "description": "栅栏列容器"
     },

@@ -64,9 +64,9 @@
     "hopeUI.radio.单选框": {
         "prefix": "hope.radio",
         "body": [
-            "<input type='radio' name='radio' value='${1:选项}' hope-verify='required' class='js_radio'/>",
-            "<input type='radio' name='radio' value='${2:选项}' hope-verify='required' class='js_radio'/>",
-            "<input type='radio' name='radio' value='${3:选项}' hope-verify='required' class='js_radio'/>"
+            "<input type='radio' name='radio' value='${1:选项}' title='${2:显示名称}' hope-verify='required' class='js_radio'/>",
+            "<input type='radio' name='radio' value='${3:选项}' title='${4:显示名称}' hope-verify='required' class='js_radio'/>",
+            "<input type='radio' name='radio' value='${5:选项}' title='${6:显示名称}' hope-verify='required' class='js_radio'/>"
         ],
         "description": "hopeUI单选框组件"
     },
