@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-05-14 11:51:32
+ * @LastEditTime : 2021-07-01 14:03:42
  * @Description :
  */
 import {
@@ -34,10 +34,11 @@ export function createWebView(
     label: string,
     name: string
 ) {
-    let path = getExtensionFileVscodeResource(
-        context,
-        "src/docs/hopeui/iframe.html"
-    );
+    // let path = getExtensionFileVscodeResource(
+    //     context,
+    //     "src/docs/hopeui/iframe.html"
+    // );
+    let path = "https://seazeg.gitee.io/hopeui/iframe.html"
     if (webviewPanel === undefined) {
         webviewPanel = window.createWebviewPanel("webView", name, viewColumn, {
             retainContextWhenHidden: true,

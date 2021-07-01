@@ -4,7 +4,7 @@ exports.getIframeHtml = exports.createWebView = void 0;
 /*
  * @Author : Evan.G
  * @Date : 2020-12-24 15:43:11
- * @LastEditTime : 2021-05-28 11:26:44
+ * @LastEditTime : 2021-07-01 14:03:42
  * @Description :
  */
 const vscode_1 = require("vscode");
@@ -19,8 +19,11 @@ function getExtensionFileVscodeResource(context, relativePath) {
         .toString();
 }
 function createWebView(context, viewColumn, label, name) {
-    // let path = getExtensionFileVscodeResource(context, "src/docs/hopeui/iframe.html")
-    let path = "https://seazeg.gitee.io/hopeui/iframe.html"
+    // let path = getExtensionFileVscodeResource(
+    //     context,
+    //     "src/docs/hopeui/iframe.html"
+    // );
+    let path = "https://seazeg.gitee.io/hopeui/iframe.html";
     if (webviewPanel === undefined) {
         webviewPanel = vscode_1.window.createWebviewPanel("webView", name, viewColumn, {
             retainContextWhenHidden: true,

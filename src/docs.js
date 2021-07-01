@@ -4,7 +4,7 @@ exports.DocsTreeView = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-02-04 11:59:37
+ * @LastEditTime : 2021-07-01 13:36:51
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -23,6 +23,7 @@ const ITEM_ICON_MAP = new Map([
     ["轮播图 [Carousel]", "components.svg"],
     ["日期时间选择 [Datepicker]", "components.svg"],
     ["表单 [Form]", "components.svg"],
+    ["抽屉 [Drawer]", "components.svg"],
     ["弹层 [Layer]", "components.svg"],
     ["灯箱 [Lightbox]", "components.svg"],
     ["流式加载 [Loadmore]", "components.svg"],
@@ -83,6 +84,7 @@ class DocsTreeView {
                 return [
                     "轮播图 [Carousel]",
                     "日期时间选择 [Datepicker]",
+                    "抽屉 [Drawer]",
                     "表单 [Form]",
                     "弹层 [Layer]",
                     "灯箱 [Lightbox]",
