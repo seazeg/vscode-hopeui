@@ -1,7 +1,7 @@
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-07-01 13:36:51
+ * @LastEditTime : 2021-07-05 15:47:31
  * @Description  :
  */
 import {
@@ -26,6 +26,7 @@ const ITEM_ICON_MAP = new Map<string, string>([
     ["动画 [Animate]", "controls.svg"],
     ["轮播图 [Carousel]", "components.svg"],
     ["日期时间选择 [Datepicker]", "components.svg"],
+    ["锚点 [Anchor]", "components.svg"],
     ["表单 [Form]", "components.svg"],
     ["抽屉 [Drawer]", "components.svg"],
     ["弹层 [Layer]", "components.svg"],
@@ -105,6 +106,7 @@ export class DocsTreeView implements TreeDataProvider<TreeItemNode> {
                 );
             } else if (element.label == "复用组件") {
                 return [
+                    "锚点 [Anchor]",
                     "轮播图 [Carousel]",
                     "日期时间选择 [Datepicker]",
                     "抽屉 [Drawer]",

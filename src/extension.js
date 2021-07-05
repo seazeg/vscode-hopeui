@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-07-01 13:37:46
+ * @LastEditTime : 2021-07-05 15:46:28
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -33,6 +33,7 @@ const LABEL_URI_MAP = new Map([
         "日期时间选择 [Datepicker]",
         "复用组件-日期时间选择-datepicker--日期时间选择-datepicker",
     ],
+    ["锚点 [Anchor]", "复用组件-锚点-anchor--锚点-anchor"],
     ["表单 [Form]", "复用组件-表单-form--表单-form"],
     ["抽屉 [Drawer]", "复用组件-抽屉-drawer--抽屉-drawer"],
     ["弹层 [Layer]", "复用组件-弹层-layer--通用"],
