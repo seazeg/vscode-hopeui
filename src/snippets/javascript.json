@@ -726,6 +726,7 @@
             "    ele: '${1:.ele}',",
             "    options: {",
             "        noTransition:${2:false},",
+            "    }",
             "    on: {",
             "        init: function (e) {${3}}",
             "    }",
