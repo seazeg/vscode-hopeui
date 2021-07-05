@@ -75,5 +75,19 @@
             "hopeui-show"
         ],
         "description": "强制内敛块显示"
+    },
+    "hope-anchor-key":{
+        "prefix": "hope-anchor-key",
+        "body": [
+            "hopeui-anchor-key"
+        ],
+        "description": "触发锚点属性"
+    },
+    "hope-anchor-value":{
+        "prefix": "hope-anchor-value",
+        "body": [
+            "hopeui-anchor-value"
+        ],
+        "description": "锚点位置属性"
     }
 }

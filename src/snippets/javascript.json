@@ -1042,5 +1042,35 @@
             "})"
         ],
         "description": "hopeUI弹幕组件"
+    },
+    "hopeUI.anchor.锚点": {
+        "prefix": "hope.anchor",
+        "body": [
+            "/*",
+            "* @Author       : Evan.G",
+            "* @Description  : hopeUI锚点组件",
+            "* @API          : http://seazeg.gitee.io/hopeui/",
+            "* ***********************************************",
+            "* ele: 元素 dom 节点",
+            "* options: {",
+            "*      offset: 偏移量 | Number",
+            "* }",
+            "* on: {",
+            "*      jumpOver: 跳转后回调",
+            "*      init: 初始化完成后回调",
+            "* }",
+            "*/",
+            "hope.anchor({",
+            "    ele: '${1:#ele}',",
+            "    options:{",
+            "        offset: ${2:0},",
+            "    },",
+            "    on: {",
+            "        jumpOver: function(e) {${3}},",
+            "        init: function(e) {${4}}",
+            "    }",
+            "})"
+        ],
+        "description": "hopeUI锚点组件"
     }
 }
