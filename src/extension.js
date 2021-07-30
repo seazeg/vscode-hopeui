@@ -37,7 +37,7 @@ const LABEL_URI_MAP = new Map([
     ["表单 [Form]", "复用组件-表单-form--表单-form"],
     ["抽屉 [Drawer]", "复用组件-抽屉-drawer--抽屉-drawer"],
     ["弹层 [Layer]", "复用组件-弹层-layer--通用"],
-    ["灯箱 [Lightbox]", "复用组件-灯箱-lightbox--iframe模式"],
+    // ["灯箱 [Lightbox]", "复用组件-灯箱-lightbox--iframe模式"],
     ["流式加载 [Loadmore]", "复用组件-流式加载-loadmore--流式加载-loadmore"],
     ["分页 [Pager]", "复用组件-分页-pager--基础"],
     ["选项卡 [Tab]", "复用组件-选项卡-tab--通用"],
