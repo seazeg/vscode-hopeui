@@ -175,6 +175,13 @@
         ],
         "description": "hopeUI工具函数"
     },
+    "hopeUI.utils.对象深拷贝": {
+        "prefix": "hope.utils.deepClone",
+        "body": [
+            "hope.utils.deepClone(${1:'Object对象'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
     "hopeUI.selector.下拉框": {
         "prefix": "hope.selector",
         "body": [
