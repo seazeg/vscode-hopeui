@@ -182,6 +182,13 @@
         ],
         "description": "hopeUI工具函数"
     },
+    "hopeUI.utils.赋予元素拖拽功能": {
+        "prefix": "hope.utils.drag",
+        "body": [
+            "hope.utils.drag(${1:'Object触发DOM对象'},${2:'Object移动DOM对象'})"
+        ],
+        "description": "hopeUI工具函数"
+    },
     "hopeUI.selector.下拉框": {
         "prefix": "hope.selector",
         "body": [
