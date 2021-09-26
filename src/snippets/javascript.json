@@ -189,6 +189,13 @@
         ],
         "description": "hopeUI工具函数"
     },
+    "hopeUI.utils.反转义操作符": {
+        "prefix": "hope.utils.restoreHtmlCode",
+        "body": [
+            "hope.utils.restoreHtmlCode(${1:})"
+        ],
+        "description": "hopeUI工具函数"
+    },
     "hopeUI.selector.下拉框": {
         "prefix": "hope.selector",
         "body": [
