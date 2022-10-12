@@ -1,7 +1,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2021-07-05 15:46:28
+ * @LastEditTime : 2022-10-12 11:00:32
  * @Description :
  */
 
@@ -38,7 +38,7 @@ const LABEL_URI_MAP: any = new Map<string, string>([
     ["弹层 [Layer]", "复用组件-弹层-layer--通用"],
     // ["灯箱 [Lightbox]", "复用组件-灯箱-lightbox--iframe模式"],
     ["流式加载 [Loadmore]", "复用组件-流式加载-loadmore--流式加载-loadmore"],
-    ["分页 [Pager]", "复用组件-分页-pager--基础"],
+    ["分页 [Pager]", "复用组件-分页-pager--分页-pager"],
     ["选项卡 [Tab]", "复用组件-选项卡-tab--通用"],
     ["文件上传 [Upload]", "复用组件-文件上传-upload--文件上传-upload"],
     ["图像放大镜 [Zoom]", "复用组件-图像放大镜-zoom--图像放大镜-zoom"],
