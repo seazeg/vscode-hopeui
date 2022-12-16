@@ -2,7 +2,7 @@
 	"name": "quick-hopeui",
 	"displayName": "Quick HopeUI",
 	"description": "hopeUI快速生成插件",
-	"version": "0.0.79",
+	"version": "0.0.80",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
