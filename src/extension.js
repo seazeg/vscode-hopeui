@@ -2,7 +2,7 @@
 /*
  * @Author : Evan.G
  * @Date : 2020-12-23 10:03:49
- * @LastEditTime : 2022-10-12 11:00:53
+ * @LastEditTime : 2022-12-16 11:11:00
  * @Description :
  */
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -40,6 +40,10 @@ const LABEL_URI_MAP = new Map([
     // ["灯箱 [Lightbox]", "复用组件-灯箱-lightbox--iframe模式"],
     ["流式加载 [Loadmore]", "复用组件-流式加载-loadmore--流式加载-loadmore"],
     ["分页 [Pager]", "复用组件-分页-pager--分页-pager"],
+    [
+        "页面滚动检测 [Pagescroll]",
+        "复用组件-页面滚动检测-pagescroll--页面滚动检测-pagescroll",
+    ],
     ["选项卡 [Tab]", "复用组件-选项卡-tab--通用"],
     ["文件上传 [Upload]", "复用组件-文件上传-upload--文件上传-upload"],
     ["图像放大镜 [Zoom]", "复用组件-图像放大镜-zoom--图像放大镜-zoom"],
@@ -70,7 +74,7 @@ function activate(context) {
         rempx_1.rempx("px2rem");
     }));
     context.subscriptions.push(vscode.commands.registerCommand("ext.hopeui.open", () => {
-        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeui.zip`));
+        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(`https://gitee.com/seazeg/hopeui/raw/master/hopeUI.zip`));
     }));
     docs_1.DocsTreeView.initTreeViewItem();
     context.subscriptions.push(vscode.commands.registerCommand("itemClick", (label) => {

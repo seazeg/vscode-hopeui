@@ -4,7 +4,7 @@ exports.DocsTreeView = exports.TreeItemNode = void 0;
 /*
  * @Author       : Evan.G
  * @Date         : 2020-12-24 15:39:21
- * @LastEditTime : 2021-07-30 14:25:17
+ * @LastEditTime : 2022-12-16 11:10:17
  * @Description  :
  */
 const vscode_1 = require("vscode");
@@ -29,6 +29,7 @@ const ITEM_ICON_MAP = new Map([
     // ["灯箱 [Lightbox]", "components.svg"],
     ["流式加载 [Loadmore]", "components.svg"],
     ["分页 [Pager]", "components.svg"],
+    ["页面滚动检测 [Pagescroll]", "components.svg"],
     ["选项卡 [Tab]", "components.svg"],
     ["文件上传 [Upload]", "components.svg"],
     ["图像放大镜 [Zoom]", "components.svg"],
@@ -92,6 +93,7 @@ class DocsTreeView {
                     // "灯箱 [Lightbox]",
                     "流式加载 [Loadmore]",
                     "分页 [Pager]",
+                    "页面滚动检测 [Pagescroll]",
                     "选项卡 [Tab]",
                     "文件上传 [Upload]",
                     "图像放大镜 [Zoom]",
